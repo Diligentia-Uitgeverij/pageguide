@@ -1,6 +1,6 @@
 {
   "name": "pageguide",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple library to light out page-elements",
   "main": "./dist/pageguide.min.js",
   "scripts": {
