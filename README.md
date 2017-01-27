@@ -1,6 +1,6 @@
 # PageGuide
 
-![PageGuide](pageguide.png)
+![PageGuide](https://github.com/Diligentia-Uitgeverij/pageguide/blob/master/pageguide.png)
 
 ## installation
 ```
