@@ -1,17 +1,21 @@
 # PageGuide
 
+![PageGuide](pageguide.png)
+
 ## installation
 ```
+npm install --save pageguide
 ```
 
 ## usage
 ```
 <head>
-  <title>page title</title>
+  <title>PageGuide &mdash; a demo</title>
+  <meta name="pageguide" content="pageguide.demo">
   <script src="/assets/pageguide.min.js"></script>
   <script>
     pageGuide = new PageGuide({
-      "page title": [
+      "pageguide.demo": [
         {
           "id": "html-element-id",
           "title": "PageGuide title",
@@ -24,9 +28,21 @@
 </head>
 ```
 
-Each page you might need a pageguide for must have an unique title, as you should provide all information for the page as an object bound to the page title.
+There are 2 possibilities to specify a guide:
 
-### alternative
+1. **page title**: You can specify a dataset by using the page title. In this example that would translate as:
+    ```
+    new PageGuide({ "PageGuide &mdash; a demo": [...] })
+    ```
+2. **meta tag**: Simply provide the page with a meta-tag: `<meta name="pageguide" content="whatever-string-you-seem-fit" >`
+    This will translate into:
+    ```
+    new PageGuide({ "whatever-string-you-seem-fit": [...] })
+    ```
+
+### alternative usages
+#### JSON
+You can put the guides in a single JSON as not to clutter a script-tag.
 ```
 <head>
   <title>page title</title>
@@ -37,4 +53,42 @@ Each page you might need a pageguide for must have an unique title, as you shoul
 </head>
 ```
 
-You can put the guides in a single JSON as not to clutter a script-tag.
+#### YAML
+YAML is not loaded by default, but you could use a YAML parser and provide the parsed data to the PageGuides.
+
+```
+$.ajax({ url: '/assets/guide.yml'})
+    .done(function(data) {
+      var guide = jsyaml.load(data);
+      pageGuide = new PageGuide(guide);
+    });
+```
+
+## Options
+Basically you must provide the PageGuide with an object containing arrays specified by an identifier string, which can 
+be the contents of a meta-tag, or the page-title.    
+A single guideObject contains:
+
+- **id**: The ID of the DOMElement you want to provide extra information about.
+- **position**: How the PageGuide will be positioned, you can pick any of these options:
+  - top
+  - top-right
+  - top-left
+  - right
+  - right-top
+  - right-bottom
+  - bottom
+  - bottom-right
+  - bottom-left
+  - left
+  - left-top
+  - left-bottom
+- **title**: The title that will be displayed inside a `h1`.
+- **content**: The contents to be displayed inside a `div`. This gives you all freedom of HTML-contents, but also means 
+that you should put the contents in `p` tags.
+
+## Questions
+
+> **What about dynamically added and removed DOMElements?**    
+> When a guide is started, it will assess all provided ID's and only iterate the currently existing elements. This 
+> includes dynamically added elements.

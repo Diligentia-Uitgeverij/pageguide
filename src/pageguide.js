@@ -15,8 +15,10 @@ function PageGuide(guidesLink) {
   var _spacing = 8;
 
   function init() {
-    _currentGuide = _data[document.title];
-    if (typeof _currentGuide === 'undefined') {
+    if (
+      typeof _data[document.title] === 'undefined' && 
+      typeof _data[$('meta[name="pageguide"]').attr('content')] === 'undefined'
+    ) {
       return false;
     }
 
@@ -173,7 +175,15 @@ function PageGuide(guidesLink) {
     drawCanvas();
   };
   this.start = function() {
-    _currentGuide = _data[document.title].filter(function(target) {
+    var key;
+    if (typeof _data[document.title] !== 'undefined') {
+      key = document.title
+    } else if (typeof _data[$('meta[name="pageguide"]').attr('content')] !== 'undefined') {
+      key = $('meta[name="pageguide"]').attr('content');
+    } else {
+      throw error('Can\'t find a pageguide to display.')
+    }
+    _currentGuide = _data[key].filter(function(target) {
       return $('#' +target.id).length > 0;
     });
 
