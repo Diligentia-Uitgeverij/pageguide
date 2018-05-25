@@ -1,10 +1,13 @@
 {
   "name": "pageguide",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "A simple library to light out page-elements",
-  "main": "./dist/pageguide.min.js",
+  "license": "GPL-2.0",
   "scripts": {
-    "start": "gulp"
+    "build": "webpack --display-error-details",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open",
+    "tsc": "tsc --outDir ./dist-tsc"
   },
   "repository": {
     "type": "git",
@@ -15,14 +18,19 @@
   ],
   "author": "Peter Delvaux <peter.delvaux@diligentia-uitgeverij.be>",
   "dependencies": {
-    "jquery": "^3.1.1",
-    "jquery-ui": "^1.12.1"
+    "popper.js": "^1.14.3"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^2.0.1"
+    "awesome-typescript-loader": "^5.0.0",
+    "babel-core": "^6.26.3",
+    "css-loader": "^0.28.11",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4"
   }
 }

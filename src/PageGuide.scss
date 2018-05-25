@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i');
+
+@mixin ease-out($duration: 450ms, $property: all, $delay: 0ms){
+  transition: $property $duration cubic-bezier(0.23, 1, 0.32, 1) $delay;
+}
+$color-highlight: #ff9933;
+
+$spacing-default: 16px;
+$spacing-small: $spacing-default / 2;
+$spacing-extra-small: $spacing-default / 4;
+$spacing-large: $spacing-default * 2;
+$spacing-extra-large: $spacing-default * 4;
+
+.z-depth-1 {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+.z-depth-2 {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23);
+}
+.z-depth-3 {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.23);
+}
+.z-depth-4 {
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.22);
+}
+.z-depth-5 {
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.22);
+}
+
+.page-guide-backdrop {
+	// values
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	opacity: 0;
+	z-index: 9999998;
+
+	// mixins
+	@include ease-out();
+
+	// extras
+	&.active {
+		opacity: 1;
+	}
+}
+
+.page-guide-button-start {
+	@extend .z-depth-3;
+	z-index: 9999998;
+	display: block;
+	width: 24px;
+	height: 24px;
+	background-color: transparent;
+	border: 3px solid #666666;
+	border-radius: 12px;
+	font-style: italic;
+	font-weight: 700;
+	padding: 0;
+	text-align: center;
+
+	outline: none !important;
+}
+
+.page-guide-item {
+	font-family: 'Ubuntu','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	position: absolute;
+	z-index: 9999999;
+
+	padding: $spacing-default;
+	border: 1px solid white;
+	background-color: #F8F8F8;
+	min-width: 256px;
+	max-width: 768px;
+	width: 50%;
+	margin: $spacing-default;
+	border: none;
+
+	@extend .z-depth-5;
+
+	&[x-placement^="center"] {
+		border-top: $spacing-small solid $color-highlight;
+	}
+	&[x-placement^="bottom"] {
+		border-top: $spacing-small solid $color-highlight;
+		
+		.page-guide-item-arrow {
+			border-bottom-color: $color-highlight;
+			top: -$spacing-large;
+			bottom: initial;
+			margin-top: 0;
+			left: 50%;
+			right: initial;
+		}
+	}
+	&[x-placement^="top"] {
+		border-bottom: $spacing-small solid $color-highlight;
+		
+		.page-guide-item-arrow {
+			border-top-color: $color-highlight;
+			top: initial;
+			bottom: -$spacing-large;
+			margin-bottom: 0;
+			left: 50%;
+			right: initial;
+		}
+	}
+	&[x-placement^="right"] {
+		border-left: $spacing-small solid $color-highlight;
+		
+		.page-guide-item-arrow {
+			border-right-color: $color-highlight;
+			left: -$spacing-large;
+			right: initial;
+			bottom: initial;
+			margin-left: 0;
+			top: 50%;
+		}
+	}
+	&[x-placement^="left"] {
+		border-right: $spacing-small solid $color-highlight;
+		
+		.page-guide-item-arrow {
+			border-left-color: $color-highlight;
+			left: initial;
+			bottom: initial;
+			right: -$spacing-large;
+			margin-right: 0;
+			top: 50%;
+		}
+	}
+
+	.page-guide-item-arrow {
+		position: absolute;
+		padding: 0;
+		margin: -$spacing-default;
+		border: $spacing-default solid transparent;
+	}
+	h1 {
+		text-align: center;
+		font-size: 32px;
+		line-height: 50px;
+		padding: 0;
+		margin: 0;
+		border-bottom: 1px solid #666666;
+	}
+	.page-guide-item-counter {
+		position: absolute;
+		top: $spacing-default;
+		right: $spacing-default;
+		font-weight: 300;
+		color: rgba(0, 0, 0, 0.5);
+		line-height: 50px;
+	}
+	.page-guide-item-buttons{
+		display: flex;
+
+		.page-guide-item-button {
+			flex: 1px;
+
+
+			&:hover {
+				background-color: rgba(0, 0, 0, 0.05);
+			}
+		}
+		.page-guide-item-button-previous {
+			text-align: right;
+		}
+		.page-guide-item-button-next {
+			text-align: left;
+		}
+	}
+	.page-guide-item-button {
+		display: inline-block;
+		border: none;
+		background: transparent;
+		font-size: 32px;
+		outline: none !important;
+		border-radius: 5px;
+		@include ease-out();
+
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: #E0E0E0;
+		}
+		&:disabled {
+			visibility: hidden;
+		}
+	}
+
+	.page-guide-item-button-exit {
+		position: absolute;
+		bottom: -$spacing-default;
+		right: $spacing-default;
+		width: $spacing-large;
+		height: $spacing-large;
+		background-color: #E8E8E8;
+		border-radius: 50%;
+		padding: 0;
+		line-height: 0;
+		text-align: center;
+
+		@extend .z-depth-3;
+	}
+}
