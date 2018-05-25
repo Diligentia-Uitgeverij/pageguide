@@ -1,31 +1,22 @@
 {
 	"compilerOptions": {
-			"module": "commonjs",
-			"target": "es2015",
-			"outDir": "./out-tsc",
-			"lib": [ "es2017", "dom" ],
-			"moduleResolution": "node",
-			"removeComments": true,
-			"emitDecoratorMetadata": true,
-			"experimentalDecorators": true,
-			"noEmitHelpers": false,
-			"sourceMap": true,
-			"noStrictGenericChecks": true,
-			"noImplicitAny": false,
-			"suppressImplicitAnyIndexErrors": true
+		"module": "commonjs",
+		"target": "es3",
+		"outDir": "./out-tsc",
+		"lib": [ "es2017", "dom" ],
+		"moduleResolution": "node",
+		"removeComments": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"noEmitHelpers": false,
+		"sourceMap": true,
+		"noStrictGenericChecks": true,
+		"noImplicitAny": false,
+		"suppressImplicitAnyIndexErrors": true
 	},
 	"include": [
 		"./src/**/*.ts"
 	],
-	"awesomeTypescriptLoaderOptions": {
-		"useBabel": false,
-    "babelOptions": {
-        "babelrc": false, /* Important line */
-        "presets": [
-            ["env", { "targets": "last 2 versions, ie 11", "modules": false }]
-        ]
-    }
-	},
 	"compileOnSave": false,
 	"buildOnSave": false
 }

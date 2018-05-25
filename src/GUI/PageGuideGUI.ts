@@ -55,6 +55,8 @@ export class PageGuideGui {
      * @memberof PageGuideGui
      */
     public async start(): Promise<any> {
+        this.targets = undefined;
+        
         await this.update();
         this.canvas.style.display = 'block';
         this.canvas.classList.add('active');

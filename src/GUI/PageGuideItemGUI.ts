@@ -5,7 +5,7 @@ import Popper, { PopperOptions } from 'popper.js';
 import { Placement } from 'popper.js';
 
 export class PageGuideItemGUI {
-    private popup: HTMLElement;
+    public markup: HTMLElement;
     private btnExit: HTMLButtonElement;
     private btnPrevious: HTMLButtonElement;
     private btnNext: HTMLButtonElement;
@@ -16,9 +16,15 @@ export class PageGuideItemGUI {
     private arrow: HTMLElement;
 
     private popper: Popper;
+    private popperShifts: any = {
+        top: [ 'bottom', 'left', 'right' ],
+        right: [ 'left', 'top', 'bottom' ],
+        bottom: [ 'top', 'left', 'right' ],
+        left: [ 'right', 'top', 'bottom' ],
+    }
 
     constructor(private pageGuideItem: PageGuideItem) {
-        this.popup = document.createElement('article');
+        this.markup = document.createElement('article');
         this.btnExit = document.createElement('button');
         this.btnPrevious = document.createElement('button');
         this.btnNext = document.createElement('button');
@@ -28,7 +34,7 @@ export class PageGuideItemGUI {
         this.counter = document.createElement('section');
         this.arrow = document.createElement('div');
 
-        this.popup.className = `${PageGuide.CSS_PREFIX}-${PageGuideItem.CSS_PREFIX}`;
+        this.markup.className = `${PageGuide.CSS_PREFIX}-${PageGuideItem.CSS_PREFIX}`;
         this.arrow.className = `${PageGuide.CSS_PREFIX}-${PageGuideItem.CSS_PREFIX}-arrow`;
         this.content.className = `${PageGuide.CSS_PREFIX}-${PageGuideItem.CSS_PREFIX}-content`;
         this.counter.className = `${PageGuide.CSS_PREFIX}-${PageGuideItem.CSS_PREFIX}-counter`;
@@ -40,12 +46,12 @@ export class PageGuideItemGUI {
         this.buttons.appendChild(this.btnPrevious);
         this.buttons.appendChild(this.btnNext);
 
-        this.popup.appendChild(this.arrow);
-        this.popup.appendChild(this.btnExit);
-        this.popup.appendChild(this.title);
-        this.popup.appendChild(this.counter);
-        this.popup.appendChild(this.content);
-        this.popup.appendChild(this.buttons);
+        this.markup.appendChild(this.arrow);
+        this.markup.appendChild(this.btnExit);
+        this.markup.appendChild(this.title);
+        this.markup.appendChild(this.counter);
+        this.markup.appendChild(this.content);
+        this.markup.appendChild(this.buttons);
 
         this.title.innerHTML = this.pageGuideItem.title;
         this.content.innerHTML = this.pageGuideItem.content;
@@ -62,12 +68,8 @@ export class PageGuideItemGUI {
         }
     }
 
-    public get markup(): HTMLElement {
-        return this.popup;
-    }
-
     public position() {
-        const popupBox = this.popup.getBoundingClientRect();
+        const popupBox = this.markup.getBoundingClientRect();
         const popupCenter: {x: number, y: number } = {
             x: popupBox.left + popupBox.width / 2,
             y: popupBox.top + popupBox.height / 2,
@@ -87,19 +89,19 @@ export class PageGuideItemGUI {
             top = (window.innerHeight - popupBox.height) / 2;
             this.pageGuideItem.position = 'center';
 
-            this.popup.setAttribute('x-placement', this.pageGuideItem.position);
-            this.popup.style.left = `${ left >> 0 }px`;
-            this.popup.style.top = `${ top >> 0 }px`;
+            this.markup.setAttribute('x-placement', this.pageGuideItem.position);
+            this.markup.style.left = `${ left >> 0 }px`;
+            this.markup.style.top = `${ top >> 0 }px`;
         } else {
             const target: HTMLElement = this.pageGuideItem.targets[0];
             const targetBox = target.getBoundingClientRect();
 
-            this.popper = new Popper(target, this.popup, {
+            this.popper = new Popper(target, this.markup, {
                 placement: position as Placement,                
                 modifiers: {
                     arrow: { element: this.arrow },
                     flip: {
-                        behavior: ['left', 'bottom', 'top']
+                        behavior: this.popperShifts[position]
                     },
                 },
             });

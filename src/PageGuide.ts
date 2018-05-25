@@ -1,8 +1,8 @@
-import { PageGuideItem } from "./PageGuideItem";
-import { PageGuideGui } from "./GUI/PageGuideGUI";
+import { PageGuideItem } from './PageGuideItem';
+import { PageGuideGui } from './GUI/PageGuideGUI';
 
-import "./PageGuide.scss";
-import { IButtonDefinition } from "./interfaces/IButtonDefinition";
+import './PageGuide.scss';
+import { IButtonDefinition } from './interfaces/IButtonDefinition';
 
 export class PageGuide {
     public static readonly CSS_PREFIX: string = 'page-guide';
@@ -44,12 +44,16 @@ export class PageGuide {
             }
             switch (evt.key) {
                 case 'ArrowUp':
+                case 'Up':
                 case 'ArrowLeft':
+                case 'Left':
                     this.activeIndex --; 
                     this.step();
                     break;
                 case 'ArrowDown':
+                case 'Down':
                 case 'ArrowRight':
+                case 'Right':
                     this.activeIndex ++; 
                     this.step();
                     break;
@@ -84,9 +88,9 @@ export class PageGuide {
         }
         
         this.activeItem = this.items[this.activeIndex];
-        
-        
         this.activeItem.draw();
+        this.activeItem.targets[0].scrollIntoView({block: 'center', inline: 'nearest'});
+
         this.gui.highlight( this.activeItem.targets );
     }
 

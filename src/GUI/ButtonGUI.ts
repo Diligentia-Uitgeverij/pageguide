@@ -12,7 +12,7 @@ export class ButtonGUI implements IButtonDefinition {
 		'padding-right': '2px',
 	};
 
-	private _markup: HTMLButtonElement;
+	public markup: HTMLButtonElement;
 
 	/*
 	 * position: absolute;
@@ -25,20 +25,16 @@ export class ButtonGUI implements IButtonDefinition {
 			Object.keys(dto).forEach(key => this[key] = dto[key]);
 		}
 		
-		this._markup = document.createElement('button');
-		this._markup.innerHTML = this.content;
-		this._markup.classList.add( `${PageGuide.CSS_PREFIX}-button-start` );
-		this._markup.style.position = this.position;
-		this._markup.style.top = this.toStyleString( this.top );
-		this._markup.style.right = this.toStyleString( this.right );
-		this._markup.style.bottom = this.toStyleString( this.bottom );
-		this._markup.style.left = this.toStyleString( this.left );
+		this.markup = document.createElement('button');
+		this.markup.innerHTML = this.content;
+		this.markup.classList.add( `${PageGuide.CSS_PREFIX}-button-start` );
+		this.markup.style.position = this.position;
+		this.markup.style.top = this.toStyleString( this.top );
+		this.markup.style.right = this.toStyleString( this.right );
+		this.markup.style.bottom = this.toStyleString( this.bottom );
+		this.markup.style.left = this.toStyleString( this.left );
 
-		Object.keys(this.style).forEach(key => this._markup.style.setProperty(key, this.style[key]) );
-	}
-
-	public get markup(): HTMLButtonElement {
-		return this._markup;
+		Object.keys(this.style).forEach(key => this.markup.style.setProperty(key, this.style[key]) );
 	}
 
 	private toStyleString( value:string|number ):string {

@@ -1,5 +1,3 @@
-const { CheckerPlugin } = require('awesome-typescript-loader');
-
 const path = require('path');
 const webpack = require('webpack'); 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -37,13 +35,12 @@ module.exports = {
   // Add the loader for .ts files.
   module: {
     rules: [
-			{ test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+			{ test: /\.tsx?$/, loader: 'ts-loader' },
 			{ test: /\.scss$/, use: [{ loader: "style-loader" }, { loader: "css-loader" }, { loader: "sass-loader" }] },
 			{ test: /\.html?$/, loader: 'html-loader' },
     ]
   },
   plugins: [
-		new CheckerPlugin(),
 		new HtmlWebpackPlugin(),
 		new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
