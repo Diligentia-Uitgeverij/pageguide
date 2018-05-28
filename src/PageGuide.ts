@@ -13,6 +13,9 @@ export class PageGuide {
     private activeIndex: number = 0;
     private activeItem: PageGuideItem;
 
+    private onStartCallback: Function;
+    private onEndCallback: Function;
+
     /**
      * creates a new PageGuide
      * @param { any[] } dtoItems a list of dtoItems to be converted into PageGuideItems
@@ -38,7 +41,7 @@ export class PageGuide {
         
         this.gui.onEnd(() => this.stop());
 
-        window.onkeyup = (evt) => {
+        window.onkeydown = (evt) => {
             if (! this.isActive || evt.altKey  || evt.shiftKey  || evt.ctrlKey  || evt.metaKey ) {
                 return;
             }
@@ -49,13 +52,21 @@ export class PageGuide {
                 case 'Left':
                     this.activeIndex --; 
                     this.step();
+                    evt.preventDefault();
                     break;
                 case 'ArrowDown':
                 case 'Down':
                 case 'ArrowRight':
                 case 'Right':
+                case 'Enter':
                     this.activeIndex ++; 
                     this.step();
+                    evt.preventDefault();
+                    break;
+                case 'Escape':
+                case 'Esc':
+                    this.stop();
+                    evt.preventDefault();
                     break;
             }
         };
@@ -72,14 +83,18 @@ export class PageGuide {
         };
     }
 
-    public async start(): Promise<any> {
+    public start(): void {
         this.isActive = true;
-        await this.gui.start();
+        this.gui.start();
 
         this.step();
+
+        if (typeof this.onStartCallback !== 'undefined') {
+            this.onStartCallback();
+        }
     }
 
-    public async step(): Promise<any> {
+    public step(): void {
         if (typeof this.activeItem !== 'undefined') {
             this.cleanActiveItem();
         }
@@ -88,10 +103,10 @@ export class PageGuide {
         }
         
         this.activeItem = this.items[this.activeIndex];
-        this.activeItem.draw();
-        this.activeItem.targets[0].scrollIntoView({block: 'center', inline: 'nearest'});
-
-        this.gui.highlight( this.activeItem.targets );
+        
+        this.activeItem.draw(() => {
+            this.gui.highlight( this.activeItem.targets );
+        });
     }
 
     public cleanActiveItem(): void {
@@ -108,5 +123,17 @@ export class PageGuide {
         this.gui.stop();
         this.cleanActiveItem();
         this.activeIndex = 0;
+
+        if (typeof this.onEndCallback !== 'undefined') {
+            this.onEndCallback();
+        }
+    }
+
+    public onStart(cb: Function) {
+        this.onStartCallback = cb;
+    }
+
+    public onEnd(cb: Function) {
+        this.onEndCallback = cb;
     }
 }

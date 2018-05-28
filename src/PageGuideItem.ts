@@ -31,13 +31,21 @@ export class PageGuideItem implements IPageGuideItem {
         this.gui = new PageGuideItemGUI( this );
     }
 
-    public draw(): boolean {
+    public draw(cb: Function): void {
         if (typeof this.targets !== 'undefined' && this.targets.length === 0) {
-            return false;
+            return;
         }
-        document.body.appendChild( this.gui.markup );
-        
-        this.gui.position();
+
+        if (typeof this.targets !== 'undefined' && this.targets.length > 0) {
+            this.targets[0].scrollIntoView({block: 'center', inline: 'nearest'});
+        }
+
+        setTimeout(() => {
+            document.body.appendChild( this.gui.markup );
+            this.gui.position();
+
+            cb();
+        }, 0);
     }
 
 

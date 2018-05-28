@@ -51,18 +51,18 @@ export class PageGuideGui {
     /**
      * start
      * @description Sizes the canvas and sizes it to fully cover either the window, either the contents.
-     * @returns {Promise<any>} 
+     * @returns { void } 
      * @memberof PageGuideGui
      */
-    public async start(): Promise<any> {
+    public start(): void {
         this.targets = undefined;
         
-        await this.update();
+        this.update();
         this.canvas.style.display = 'block';
         this.canvas.classList.add('active');
     };
 
-    public async update() {
+    public update():void {
         this.renderBackdrop();
 
         if ( typeof this.targets === 'undefined') {
@@ -86,12 +86,12 @@ export class PageGuideGui {
         setTimeout(() => this.canvas.style.display = '', 500);
     }
 
-    public async highlight(elements: NodeListOf<HTMLElement>): Promise<any> {
+    public highlight(elements: NodeListOf<HTMLElement>): void {
         this.targets = elements;
-        await this.update();
+        this.update();
     }
 
-    private async renderBackdrop(): Promise<any> {
+    private renderBackdrop(): void {
         const stageWidth: number = window.innerWidth;
         const stageHeight: number = window.innerHeight;
 

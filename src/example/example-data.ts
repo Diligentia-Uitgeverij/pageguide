@@ -37,20 +37,26 @@ export const exampleData: IPageGuideItem[] = [
 	},
 	{
 		title: `Multiple Elements, positioned <code>right</code>`,
-		content: `<p>This is how we highlight a single element by default. No shape has been defined, but we've now positioned it on the right hand side</p>`,
+		content: `<p>This is how we highlight multiple elements by default. No shape has been defined, but we've now positioned it on the top side</p>`,
 		element: `li`,
 		position: `right`,
 	},
 	{
-		title: `Single Element, positioned <code>right</code>`,
+		title: `Single Element, positioned <code>top</code>`,
 		content: `<p>This is how we highlight a single element by default. No shape has been defined, but we've now positioned it on the right hand side</p>`,
 		element: `#article-2`,
 		position: `top`,
 	},
 	{
-		title: `Single Element, positioned <code>right</code>`,
+		title: `Single Element, positioned <code>top</code>`,
 		content: `<p>This is how we highlight a single element by default. No shape has been defined, but we've now positioned it on the right hand side</p>`,
 		element: `#article-4`,
 		position: `top`,
+	},
+	{
+		title: `Multiple Elements, positioned <code>bottom</code>`,
+		content: `<p>This is how we highlight a single element by default. No shape has been defined, but we've now positioned it on the bottom side</p>`,
+		element: `article h2`,
+		position: `bottom`,
 	},
 ];

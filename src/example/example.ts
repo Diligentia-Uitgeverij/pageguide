@@ -14,4 +14,8 @@ import { exampleData } from './example-data';
 
 	btn.onclick = ()=>{ guide.start(); };
 
+	guide.onEnd(() => {
+		btn.scrollIntoView({});
+	});
+
 })();
