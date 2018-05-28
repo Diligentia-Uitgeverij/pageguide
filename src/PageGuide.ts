@@ -3,6 +3,7 @@ import { PageGuideGui } from './GUI/PageGuideGUI';
 
 import './PageGuide.scss';
 import { IButtonDefinition } from './interfaces/IButtonDefinition';
+import { IPageGuideItem } from './interfaces/IPageGuideItem';
 
 export class PageGuide {
     public static readonly CSS_PREFIX: string = 'page-guide';
@@ -18,9 +19,9 @@ export class PageGuide {
 
     /**
      * creates a new PageGuide
-     * @param { any[] } dtoItems a list of dtoItems to be converted into PageGuideItems
+     * @param { IPageGuideItem[] } dtoItems a list of dtoItems to be converted into PageGuideItems
      */
-    constructor(dtoItems: any[], buttonDefinition: boolean|IButtonDefinition = true) {
+    constructor(dtoItems: IPageGuideItem[], buttonDefinition: boolean|IButtonDefinition = true) {
         this.gui = new PageGuideGui( buttonDefinition );
 
         this.items = dtoItems
@@ -83,6 +84,11 @@ export class PageGuide {
         };
     }
 
+    /**
+     * start
+     * @description starts the PageGuide
+     * @memberof PageGuide
+     */
     public start(): void {
         this.isActive = true;
         this.gui.start();
@@ -94,7 +100,17 @@ export class PageGuide {
         }
     }
 
-    public step(): void {
+    /**
+     * step
+     * @description Renders the active step.
+     * @param { number } index [OPTIONAL] the step you want to activate
+     * @returns {void} 
+     * @memberof PageGuide
+     */
+    public step(index?: number): void {
+        if (typeof index !== 'undefined' && index >= 0 && index <= this.items.length - 1) {
+            this.activeIndex = index;
+        }
         if (typeof this.activeItem !== 'undefined') {
             this.cleanActiveItem();
         }
@@ -109,6 +125,11 @@ export class PageGuide {
         });
     }
 
+    /**
+     * cleanActiveItem
+     * @description If the active item is defiend, clean it up, and set it to undefined.
+     * @memberof PageGuide
+     */
     public cleanActiveItem(): void {
         if (typeof this.activeItem === 'undefined') {
             return
@@ -118,6 +139,11 @@ export class PageGuide {
         this.activeItem = undefined;
     }
 
+    /**
+     * stop
+     * @description stops the PageGuide
+     * @memberof PageGuide
+     */
     public stop(): void {
         this.isActive = false;
         this.gui.stop();
@@ -129,10 +155,21 @@ export class PageGuide {
         }
     }
 
+    /**
+     * onStart
+     * @description adds a callback function to fire when the pageGuide is started by the user.
+     * @param {Function} cb 
+     * @memberof PageGuide
+     */
     public onStart(cb: Function) {
         this.onStartCallback = cb;
     }
-
+    /**
+     * onEnd
+     * @description adds a callback function to fire when the pageGuide reaches the end, or is stopped by the user.
+     * @param {Function} cb 
+     * @memberof PageGuide
+     */
     public onEnd(cb: Function) {
         this.onEndCallback = cb;
     }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i');
+// @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i');
 
 @mixin ease-out($duration: 450ms, $property: all, $delay: 0ms){
   transition: $property $duration cubic-bezier(0.23, 1, 0.32, 1) $delay;

@@ -31,6 +31,13 @@ export class PageGuideItem implements IPageGuideItem {
         this.gui = new PageGuideItemGUI( this );
     }
 
+    /**
+     * draw
+     * @description Draws the PageGuideItem on the document.body
+     * @param {Function} cb a callback function, so it will work on IE11 as well
+     * @returns {void} 
+     * @memberof PageGuideItem
+     */
     public draw(cb: Function): void {
         if (typeof this.targets !== 'undefined' && this.targets.length === 0) {
             return;
@@ -48,20 +55,48 @@ export class PageGuideItem implements IPageGuideItem {
         }, 0);
     }
 
-
+    /**
+     * cleanup
+     * @description removes the PageGuideItem from the document.body
+     * @memberof PageGuideItem
+     */
     public cleanup(): void {
         document.body.removeChild( this.gui.markup );
     }
+    /**
+     * update
+     * @description updates the GUI, repositions when needed
+     * @memberof PageGuideItem
+     */
     public update(): void {
         this.gui.update();
     }
 
+    /**
+     * onExit
+     * @description fires a callback when the user closes the PageGuideItem
+     * @param {(((this: HTMLElement, ev: MouseEvent) => any) | null)} callback 
+     * @memberof PageGuideItem
+     */
     public onExit( callback: ((this: HTMLElement, ev: MouseEvent) => any) | null): void {
         this.gui.onExit(callback);
     }
+
+    /**
+     * onPrevious
+     * @description fires a callback when the user clicks the previous button
+     * @param {(((this: HTMLElement, ev: MouseEvent) => any) | null)} callback 
+     * @memberof PageGuideItem
+     */
     public onPrevious( callback: ((this: HTMLElement, ev: MouseEvent) => any) | null ): void {
         this.gui.onPrevious(callback);
     }
+    /**
+     * onNext
+     * @description fires a callback when the user clicks the next button
+     * @param {(((this: HTMLElement, ev: MouseEvent) => any) | null)} callback 
+     * @memberof PageGuideItem
+     */
     public onNext( callback: ((this: HTMLElement, ev: MouseEvent) => any) | null ): void {
         this.gui.onNext(callback);
     }

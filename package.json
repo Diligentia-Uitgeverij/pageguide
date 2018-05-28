@@ -3,11 +3,11 @@
   "version": "2.0.0",
   "description": "A simple library to light out page-elements",
   "license": "GPL-2.0",
+  "main": "./dist/pageguide.js",
   "scripts": {
-    "build": "webpack --display-error-details",
+    "build": "webpack --config webpack.config.prod.js",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --open",
-    "tsc": "tsc --outDir ./dist-tsc"
+    "start": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",

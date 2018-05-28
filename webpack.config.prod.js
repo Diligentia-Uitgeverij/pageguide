@@ -2,8 +2,10 @@ const path = require('path');
 const webpack = require('webpack'); 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const libraryName = 'PageGuide';
+
 module.exports = {
-	mode: 'development',
+	mode: 'production',
   // Currently we need to add '.ts' to the resolve.extensions array.
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx']
@@ -13,20 +15,15 @@ module.exports = {
 		pageguide: './src/PageGuide.ts',
 		example: './src/example/example.ts',
 	},
-	
-	devServer: {
-    contentBase: path.join(__dirname, 'dev'),
-    compress: true,
-    port: 9000,
-    hot: true,
-    host: 'pageguide.peter.test'
-  },
   
 	output: {
-		path: path.resolve(__dirname, 'dev'),
+		path: path.resolve(__dirname, 'dist'),
 		publicPath: '/',
 		filename: '[name].js',
-		chunkFilename: '[id].chunk.js',
+    chunkFilename: '[id].chunk.js',
+    library: libraryName,
+    libraryTarget: 'umd',
+    umdNamedDefine: true
 	},
 
   // Source maps support ('inline-source-map' also works)
@@ -43,6 +40,5 @@ module.exports = {
   plugins: [
 		new HtmlWebpackPlugin(),
 		new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
   ]
 };
