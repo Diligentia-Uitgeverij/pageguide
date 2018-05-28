@@ -13,7 +13,6 @@ module.exports = {
 
   entry: {
 		pageguide: './src/PageGuide.ts',
-		example: './src/example/example.ts',
 	},
   
 	output: {
@@ -27,7 +26,7 @@ module.exports = {
 	},
 
   // Source maps support ('inline-source-map' also works)
-  devtool: 'inline-source-map',
+  // devtool: 'source-map',
 
   // Add the loader for .ts files.
   module: {
@@ -38,7 +37,6 @@ module.exports = {
     ]
   },
   plugins: [
-		new HtmlWebpackPlugin(),
 		new webpack.NamedModulesPlugin(),
   ]
 };

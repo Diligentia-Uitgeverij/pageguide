@@ -1,9 +1,10 @@
 {
   "name": "pageguide",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A simple library to light out page-elements",
   "license": "GPL-2.0",
   "main": "./dist/pageguide.js",
+  "typings": "./dist/types/PageGuide.d.ts",
   "scripts": {
     "build": "webpack --config webpack.config.prod.js",
     "watch": "webpack --watch",
