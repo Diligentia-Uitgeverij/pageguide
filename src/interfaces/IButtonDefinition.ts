@@ -2,7 +2,6 @@ export interface IButtonDefinition {
 	/**
 	 * @default 'absolute'
 	 * @type {string}
-	 * @memberof IButtonDefinition
 	 */
 	position?: string;
 	top?: number|string;

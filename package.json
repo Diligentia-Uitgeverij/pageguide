@@ -1,6 +1,6 @@
 {
   "name": "pageguide",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A simple library to light out page-elements",
   "license": "GPL-2.0",
   "main": "./dist/pageguide.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@stash.diligentia.be:7999/dil/pageguide.git"
+    "url": "git@github.com:Diligentia-Uitgeverij/pageguide.git"
   },
   "keywords": [
     "pageguide"

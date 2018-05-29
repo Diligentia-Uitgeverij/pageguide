@@ -58,12 +58,12 @@ export class PageGuideItemGUI {
         this.btnExit.innerHTML = '&times;';
         this.btnPrevious.innerHTML = '&laquo;';
         this.btnNext.innerHTML = '&raquo;';
-        this.counter.innerHTML = `${this.pageGuideItem.index + 1} / ${this.pageGuideItem.collentionLength}`;
+        this.counter.innerHTML = `${this.pageGuideItem.index + 1} / ${this.pageGuideItem.collectionLength}`;
 
         if (this.pageGuideItem.index === 0) {
             this.btnPrevious.setAttribute('disabled', 'disabled');
         }
-        if (this.pageGuideItem.index === this.pageGuideItem.collentionLength - 1) {
+        if (this.pageGuideItem.index === this.pageGuideItem.collectionLength - 1) {
             this.btnNext.setAttribute('disabled', 'disabled');
         }
     }

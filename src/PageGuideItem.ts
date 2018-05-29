@@ -1,17 +1,41 @@
 import { PageGuideItemGUI } from "./GUI/PageGuideItemGUI";
 import { IPageGuideItem } from "./interfaces/IPageGuideItem";
 
+/**
+ * @class PageGuideItem
+ * @description A single item to display information.
+ * @author Peter Delvaux <peter.delvaux@diligentia-uitgeverij.be>
+ * @since 28/05/2018
+ * @export PageGuideItem
+ */
 export class PageGuideItem implements IPageGuideItem {
+    /**
+     * @description prefix used for the creation of CSS-classes
+     * @static
+     * @type {string}
+     * @memberof PageGuideItem
+     */
     public static readonly CSS_PREFIX: string = 'item';
 
+    /**
+     * @description Graphical User Interface of the PageGuideItem
+     * @private
+     * @type {PageGuideItemGUI}
+     * @memberof PageGuideItem
+     */
     private gui: PageGuideItemGUI;
+    /**
+     * @description NodeList of all found targets, can be undefined or empty.
+     * @type {NodeListOf<HTMLElement>}
+     * @memberof PageGuideItem
+     */
     public targets: NodeListOf<HTMLElement>;
 
     /**
-     * Creates a new PageGuideItem
+     * @description Creates a new PageGuideItem
      * @param { string } content Contents of the popup, can be plaintext or HTML
      * @param { number } index Index of the item in the collection
-     * @param { number } collentionLength Length of the collection
+     * @param { number } collectionLength Length of the collection
      * @param { string } element [OPTIONAL] element query selector
      * @param { string } title [OPTIONAL] title of the popup
      * @param { string } position [OPTIONAL] position, defaults to right
@@ -19,7 +43,7 @@ export class PageGuideItem implements IPageGuideItem {
     constructor(
         public content: string, 
         public index: number,
-        public collentionLength: number,
+        public collectionLength: number,
         public element?: string, 
         public title: string = '', 
         public position: string = 'bottom',
@@ -32,7 +56,6 @@ export class PageGuideItem implements IPageGuideItem {
     }
 
     /**
-     * draw
      * @description Draws the PageGuideItem on the document.body
      * @param {Function} cb a callback function, so it will work on IE11 as well
      * @returns {void} 
@@ -56,7 +79,6 @@ export class PageGuideItem implements IPageGuideItem {
     }
 
     /**
-     * cleanup
      * @description removes the PageGuideItem from the document.body
      * @memberof PageGuideItem
      */
@@ -64,7 +86,6 @@ export class PageGuideItem implements IPageGuideItem {
         document.body.removeChild( this.gui.markup );
     }
     /**
-     * update
      * @description updates the GUI, repositions when needed
      * @memberof PageGuideItem
      */
@@ -73,7 +94,6 @@ export class PageGuideItem implements IPageGuideItem {
     }
 
     /**
-     * onExit
      * @description fires a callback when the user closes the PageGuideItem
      * @param {(((this: HTMLElement, ev: MouseEvent) => any) | null)} callback 
      * @memberof PageGuideItem
@@ -83,7 +103,6 @@ export class PageGuideItem implements IPageGuideItem {
     }
 
     /**
-     * onPrevious
      * @description fires a callback when the user clicks the previous button
      * @param {(((this: HTMLElement, ev: MouseEvent) => any) | null)} callback 
      * @memberof PageGuideItem
@@ -92,7 +111,6 @@ export class PageGuideItem implements IPageGuideItem {
         this.gui.onPrevious(callback);
     }
     /**
-     * onNext
      * @description fires a callback when the user clicks the next button
      * @param {(((this: HTMLElement, ev: MouseEvent) => any) | null)} callback 
      * @memberof PageGuideItem

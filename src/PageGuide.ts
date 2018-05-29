@@ -5,21 +5,77 @@ import './PageGuide.scss';
 import { IButtonDefinition } from './interfaces/IButtonDefinition';
 import { IPageGuideItem } from './interfaces/IPageGuideItem';
 
+/**
+ * @class PageGuide
+ * @description Diligentia Uitgeverij's PageGuide uses a Canvas to draw a backdrop, and hightlight targeted elements.
+ * @author Peter Delvaux <peter.delvaux@diligentia-uitgeverij.be>
+ * @since 28/05/2018
+ * @export PageGuide
+ */
 export class PageGuide {
+    /**
+     * @description prefix used for the creation of CSS-classes
+     * @static
+     * @type {string}
+     * @memberof PageGuide
+     */
     public static readonly CSS_PREFIX: string = 'page-guide';
 
+    /**
+     * @description Graphical User Interface of the PageGuide
+     * @private
+     * @type {PageGuideGui}
+     * @memberof PageGuide
+     */
     private gui: PageGuideGui;
+    /**
+     * @description list of items to be displayed
+     * @private
+     * @type {PageGuideItem[]}
+     * @memberof PageGuide
+     */
     private items: PageGuideItem[];
+    /**
+     * @description if the PageGuide is active
+     * @private
+     * @type {boolean}
+     * @memberof PageGuide
+     */
     private isActive: boolean = false;
+    /**
+     * @description Index of the item which is currently displayed
+     * @private
+     * @type {number}
+     * @memberof PageGuide
+     */
     private activeIndex: number = 0;
+    /**
+     * @description The currently active item
+     * @private
+     * @type {PageGuideItem}
+     * @memberof PageGuide
+     */
     private activeItem: PageGuideItem;
 
+    /**
+     * @description callBack functien to be called on start
+     * @private
+     * @type {Function}
+     * @memberof PageGuide
+     */
     private onStartCallback: Function;
+    /**
+     * @description callBack functien to be called on stop
+     * @private
+     * @type {Function}
+     * @memberof PageGuide
+     */
     private onEndCallback: Function;
 
     /**
-     * creates a new PageGuide
+     * @description creates a new PageGuide
      * @param { IPageGuideItem[] } dtoItems a list of dtoItems to be converted into PageGuideItems
+     * @param { IButtonDefinition | boolean} buttonDefinition an optional ButtonDefinition, or true for the default button, or false for no button.
      */
     constructor(dtoItems: IPageGuideItem[], buttonDefinition: boolean|IButtonDefinition = true) {
         this.gui = new PageGuideGui( buttonDefinition );
