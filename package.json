@@ -8,7 +8,8 @@
   "scripts": {
     "build": "webpack --config webpack.config.prod.js",
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "docs": "typedoc --readme none --mode file --theme markdown --out ./doc/ ./src/PageGuide.ts" 
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,8 @@
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "ts-loader": "^4.3.0",
+    "typedoc": "^0.11.1",
+    "typedoc-plugin-markdown": "^1.1.12",
     "typescript": "^2.8.3",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.3",

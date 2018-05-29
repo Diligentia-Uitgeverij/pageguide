@@ -1,6 +1,6 @@
 # PageGuide <small>by Diligentia Uitgeverij</small>
 
-| [Installation](#installation) | [Usage in Javascript](#javascript) | [Usage in Typescript](#typescript) | [Documentation](doc/index.html) |
+| [Installation](#installation) | [Usage in Javascript](#javascript) | [Usage in Typescript](#typescript) | [Documentation](doc/) |
 
 ## Why another library
 The way our applications are built make it near impossible to simply add a backdrop div, and expect you can elevate the target above it using the z-index. 
