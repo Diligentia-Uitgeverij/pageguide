@@ -99,6 +99,9 @@ export class PageGuideItemGUI {
             this.popper = new Popper(target, this.markup, {
                 placement: position as Placement,                
                 modifiers: {
+                    preventOverflow: {
+                        boundariesElement: 'viewport',
+                    },
                     arrow: { element: this.arrow },
                     flip: {
                         behavior: this.popperShifts[position]

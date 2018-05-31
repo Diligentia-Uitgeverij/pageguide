@@ -1,6 +1,6 @@
 {
   "name": "pageguide",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A simple library to light out page-elements",
   "license": "GPL-2.0",
   "main": "./dist/pageguide.js",
@@ -9,14 +9,17 @@
     "build": "webpack --config webpack.config.prod.js",
     "watch": "webpack --watch",
     "start": "webpack-dev-server --open",
-    "docs": "typedoc --readme none --mode file --theme markdown --out ./doc/ ./src/PageGuide.ts" 
+    "docs": "typedoc --readme none --mode file --theme markdown --out ./doc/ ./src/PageGuide.ts"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:Diligentia-Uitgeverij/pageguide.git"
   },
   "keywords": [
-    "pageguide"
+    "pageguide",
+    "support",
+    "help",
+    "tutorial"
   ],
   "author": "Peter Delvaux <peter.delvaux@diligentia-uitgeverij.be>",
   "dependencies": {
@@ -32,9 +35,9 @@
     "ts-loader": "^4.3.0",
     "typedoc": "^0.11.1",
     "typedoc-plugin-markdown": "^1.1.12",
-    "typescript": "^2.8.3",
-    "webpack": "^4.8.3",
-    "webpack-cli": "^2.1.3",
+    "typescript": "^2.8.4",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^2.1.4",
     "webpack-dev-server": "^3.1.4"
   }
 }

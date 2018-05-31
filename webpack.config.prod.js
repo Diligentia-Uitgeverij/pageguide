@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack'); 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const libraryName = 'PageGuide';
 
@@ -25,18 +24,11 @@ module.exports = {
     umdNamedDefine: true
 	},
 
-  // Source maps support ('inline-source-map' also works)
-  // devtool: 'source-map',
-
   // Add the loader for .ts files.
   module: {
     rules: [
 			{ test: /\.tsx?$/, loader: 'ts-loader' },
 			{ test: /\.scss$/, use: [{ loader: "style-loader" }, { loader: "css-loader" }, { loader: "sass-loader" }] },
-			{ test: /\.html?$/, loader: 'html-loader' },
     ]
   },
-  plugins: [
-		new webpack.NamedModulesPlugin(),
-  ]
 };
