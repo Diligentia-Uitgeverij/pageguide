@@ -86,9 +86,8 @@ $spacing-extra-large: $spacing-default * 4;
 		
 		.page-guide-item-arrow {
 			border-bottom-color: $color-highlight;
-			top: -$spacing-large;
+			top: -$spacing-small * 3;
 			bottom: initial;
-			margin-top: 0;
 			left: 50%;
 			right: initial;
 		}
@@ -99,8 +98,7 @@ $spacing-extra-large: $spacing-default * 4;
 		.page-guide-item-arrow {
 			border-top-color: $color-highlight;
 			top: initial;
-			bottom: -$spacing-large;
-			margin-bottom: 0;
+			bottom: -$spacing-small * 3;
 			left: 50%;
 			right: initial;
 		}
@@ -110,10 +108,9 @@ $spacing-extra-large: $spacing-default * 4;
 		
 		.page-guide-item-arrow {
 			border-right-color: $color-highlight;
-			left: -$spacing-large;
+			left: -$spacing-small * 3;
 			right: initial;
 			bottom: initial;
-			margin-left: 0;
 			top: 50%;
 		}
 	}
@@ -124,8 +121,7 @@ $spacing-extra-large: $spacing-default * 4;
 			border-left-color: $color-highlight;
 			left: initial;
 			bottom: initial;
-			right: -$spacing-large;
-			margin-right: 0;
+			right: -$spacing-small * 3;
 			top: 50%;
 		}
 	}
@@ -133,8 +129,8 @@ $spacing-extra-large: $spacing-default * 4;
 	.page-guide-item-arrow {
 		position: absolute;
 		padding: 0;
-		margin: -$spacing-default;
-		border: $spacing-default solid transparent;
+		margin: 0;
+		border: $spacing-small solid transparent;
 	}
 	h1 {
 		text-align: center;

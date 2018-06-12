@@ -83,7 +83,7 @@ export class PageGuide {
         this.items = dtoItems
             .filter( dto => typeof dto.element === 'undefined' || document.querySelectorAll(dto.element).length > 0)
             .map( (dto, index, list) => {
-                const item = new PageGuideItem(dto.content, index, list.length, dto.element, dto.title, dto.position);
+                const item = new PageGuideItem(dto.content, index, list.length, dto.element, dto.title, dto.position, dto.shape);
 
                 item.onExit(()=>{ this.stop() });
                 item.onPrevious(()=>{ this.activeIndex --; this.step(); });
@@ -177,7 +177,7 @@ export class PageGuide {
         this.activeItem = this.items[this.activeIndex];
         
         this.activeItem.draw(() => {
-            this.gui.highlight( this.activeItem.targets );
+            this.gui.highlight( this.activeItem );
         });
     }
 

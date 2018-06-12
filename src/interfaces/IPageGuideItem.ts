@@ -3,4 +3,5 @@ export interface IPageGuideItem {
 	element?: string; 
 	title?: string;
 	position?: string;
+	shape?: string;
 }

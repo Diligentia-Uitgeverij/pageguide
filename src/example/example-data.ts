@@ -18,6 +18,9 @@ export const exampleData: IPageGuideItem[] = [
 		content: `<p>So, how does our guide work? Well, we don't rely on z-indexes, but our overlay is a canvas. We simply 
 		cut out a shape to show the highlighted element.<br>
 		Our pop-over with all the content is then placed on top of all this.</p>`,
+		element: `#btn-start-tour`,
+		position: `left`,
+		shape: 'ellipse',
 	},
 	{
 		title: `Diligentia Uitgeverij &mdash; PageGuide`,
@@ -28,24 +31,28 @@ export const exampleData: IPageGuideItem[] = [
 		title: `Single Element`,
 		content: `<p>This is how we highlight a single element by default. No shape or position has been defined.</p>`,
 		element: `header`,
+		shape: 'rounded_rect',
 	},
 	{
 		title: `Single Element, positioned <code>right</code>`,
 		content: `<p>This is how we highlight a single element by default. No shape has been defined, but we've now positioned it on the right hand side</p>`,
 		element: `ul`,
 		position: `right`,
+		shape: 'rounded_rect',
 	},
 	{
 		title: `Multiple Elements, positioned <code>right</code>`,
 		content: `<p>This is how we highlight multiple elements by default. No shape has been defined, but we've now positioned it on the top side</p>`,
 		element: `li`,
 		position: `right`,
+		shape: 'rounded_rect',
 	},
 	{
 		title: `Single Element, positioned <code>top</code>`,
 		content: `<p>This is how we highlight a single element by default. No shape has been defined, but we've now positioned it on the right hand side</p>`,
 		element: `#article-2`,
 		position: `top`,
+		shape: 'rounded_rect',
 	},
 	{
 		title: `Single Element, positioned <code>top</code>`,
@@ -58,5 +65,6 @@ export const exampleData: IPageGuideItem[] = [
 		content: `<p>This is how we highlight a single element by default. No shape has been defined, but we've now positioned it on the bottom side</p>`,
 		element: `article h2`,
 		position: `bottom`,
+		shape: 'rounded_rect',
 	},
 ];

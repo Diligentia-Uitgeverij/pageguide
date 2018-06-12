@@ -17,6 +17,16 @@ export class PageGuideItem implements IPageGuideItem {
      */
     public static readonly CSS_PREFIX: string = 'item';
 
+    public static readonly RECT: string = 'rect';
+    public static readonly ROUNDED_RECT: string = 'rounded_rect';
+    public static readonly CIRCLE: string = 'circle';
+    public static readonly ELLIPSE: string = 'ellipse';
+
+    public static readonly TOP: string = 'top';
+    public static readonly RIGHT: string = 'right';
+    public static readonly BOTTOM: string = 'bottom';
+    public static readonly LEFT: string = 'left';
+
     /**
      * @description Graphical User Interface of the PageGuideItem
      * @private
@@ -38,7 +48,8 @@ export class PageGuideItem implements IPageGuideItem {
      * @param { number } collectionLength Length of the collection
      * @param { string } element [OPTIONAL] element query selector
      * @param { string } title [OPTIONAL] title of the popup
-     * @param { string } position [OPTIONAL] position, defaults to right
+     * @param { 'top'|'right'|'bottom'|'left' } position [OPTIONAL] position, defaults to bottom
+     * @param { 'rect'|'rounded_rect'|'circle'|'ellipse' } shape [OPTIONAL] shape of the highlight, defaults to rect
      */
     constructor(
         public content: string, 
@@ -46,7 +57,8 @@ export class PageGuideItem implements IPageGuideItem {
         public collectionLength: number,
         public element?: string, 
         public title: string = '', 
-        public position: string = 'bottom',
+        public position: string = PageGuideItem.BOTTOM,
+        public shape: string = PageGuideItem.RECT,
     ) {
         if (typeof this.element !== 'undefined' && this.element !== '') {
             this.targets = document.querySelectorAll(this.element);

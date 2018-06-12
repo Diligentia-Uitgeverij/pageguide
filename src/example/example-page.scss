@@ -71,19 +71,21 @@
 			}
 		}
 	}
-	section.content {
-		padding: 16px;
+	section.content-container {
+		
 		flex: 1;
 		overflow: auto;
 		max-height: 100%;
 		position: relative;
+		display: flex;
+		flex-direction: column;
 
 		header {
 			display: flex;
 			background-color: #E0E0E0;
 			border-bottom: 1px solid #666666;
 			padding: 16px;
-			margin: -16px -16px 16px -16px;
+			margin: 0;
 
 			h1 {
 				margin: 0;
@@ -93,7 +95,7 @@
 				display: block;
 				width: 24px;
 				height: 24px;
-				background-color: transparent;
+				background-color: #E0E0E0;
 				border: 3px solid #666666;
 				border-radius: 12px;
 				font-style: italic;
@@ -102,6 +104,12 @@
 
 				outline: none !important;
 			}
+		}
+
+		section.content {
+			flex: 1;
+			overflow: auto;
+			padding: 16px;
 		}
 		h1 {
 			margin: 16px 0 32px;

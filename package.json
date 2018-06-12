@@ -1,7 +1,7 @@
 {
   "name": "pageguide",
-  "version": "2.0.3",
-  "description": "A simple library to light out page-elements",
+  "version": "2.0.4",
+  "description": "A simple library to light page-elements up, even in complex z-index rich applications.",
   "license": "GPL-2.0",
   "main": "./dist/pageguide.js",
   "typings": "./dist/types/PageGuide.d.ts",
@@ -21,6 +21,10 @@
     "help",
     "tutorial"
   ],
+  "directories": {
+    "doc": "./doc",
+    "lib": "./src"
+  },
   "author": "Peter Delvaux <peter.delvaux@diligentia-uitgeverij.be>",
   "dependencies": {
     "popper.js": "^1.14.3"
