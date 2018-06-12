@@ -34,9 +34,18 @@
 * [gui](pageguideitem.md#gui)
 * [index](pageguideitem.md#index)
 * [position](pageguideitem.md#position)
+* [shape](pageguideitem.md#shape)
 * [targets](pageguideitem.md#targets)
 * [title](pageguideitem.md#title)
+* [BOTTOM](pageguideitem.md#bottom)
+* [CIRCLE](pageguideitem.md#circle)
 * [CSS_PREFIX](pageguideitem.md#css_prefix)
+* [ELLIPSE](pageguideitem.md#ellipse)
+* [LEFT](pageguideitem.md#left)
+* [RECT](pageguideitem.md#rect)
+* [RIGHT](pageguideitem.md#right)
+* [ROUNDED_RECT](pageguideitem.md#rounded_rect)
+* [TOP](pageguideitem.md#top)
 
 ### Methods
 
@@ -55,9 +64,9 @@
 
 ###  constructor
 
-⊕ **new PageGuideItem**(content: *`string`*, index: *`number`*, collectionLength: *`number`*, element?: *`string`*, title?: *`string`*, position?: *`string`*): [PageGuideItem](pageguideitem.md)
+⊕ **new PageGuideItem**(content: *`string`*, index: *`number`*, collectionLength: *`number`*, element?: *`string`*, title?: *`string`*, position?: *`string`*, shape?: *`string`*): [PageGuideItem](pageguideitem.md)
 
-*Defined in [PageGuideItem.ts:32](https://github.com/Diligentia-Uitgeverij/pageguide/blob/c87f57a/src/PageGuideItem.ts#L32)*
+*Defined in [PageGuideItem.ts:42](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L42)*
 
 *__description__*: Creates a new PageGuideItem
 
@@ -70,7 +79,8 @@
 | collectionLength | `number` | - |  Length of the collection |
 | `Optional` element | `string` | - |  element query selector |
 | `Default value` title | `string` | &quot;&quot; |  title of the popup |
-| `Default value` position | `string` | &quot;bottom&quot; |  position, defaults to right |
+| `Default value` position | `string` |  PageGuideItem.BOTTOM |  position, defaults to bottom |
+| `Default value` shape | `string` |  PageGuideItem.RECT |  shape of the highlight, defaults to rect |
 
 **Returns:** [PageGuideItem](pageguideitem.md)
 
@@ -84,7 +94,7 @@ ___
 
 **● collectionLength**: *`number`*
 
-*Defined in [PageGuideItem.ts:46](https://github.com/Diligentia-Uitgeverij/pageguide/blob/c87f57a/src/PageGuideItem.ts#L46)*
+*Defined in [PageGuideItem.ts:57](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L57)*
 
 Length of the collection
 
@@ -97,7 +107,7 @@ ___
 
 *Implementation of [IPageGuideItem](../interfaces/ipageguideitem.md).[content](../interfaces/ipageguideitem.md#content)*
 
-*Defined in [PageGuideItem.ts:44](https://github.com/Diligentia-Uitgeverij/pageguide/blob/c87f57a/src/PageGuideItem.ts#L44)*
+*Defined in [PageGuideItem.ts:55](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L55)*
 
 Contents of the popup, can be plaintext or HTML
 
@@ -110,7 +120,7 @@ ___
 
 *Implementation of [IPageGuideItem](../interfaces/ipageguideitem.md).[element](../interfaces/ipageguideitem.md#element)*
 
-*Defined in [PageGuideItem.ts:47](https://github.com/Diligentia-Uitgeverij/pageguide/blob/c87f57a/src/PageGuideItem.ts#L47)*
+*Defined in [PageGuideItem.ts:58](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L58)*
 
 element query selector
 
@@ -121,7 +131,7 @@ ___
 
 **● gui**: *[PageGuideItemGUI](pageguideitemgui.md)*
 
-*Defined in [PageGuideItem.ts:26](https://github.com/Diligentia-Uitgeverij/pageguide/blob/c87f57a/src/PageGuideItem.ts#L26)*
+*Defined in [PageGuideItem.ts:36](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L36)*
 
 *__description__*: Graphical User Interface of the PageGuideItem
 
@@ -136,7 +146,7 @@ ___
 
 **● index**: *`number`*
 
-*Defined in [PageGuideItem.ts:45](https://github.com/Diligentia-Uitgeverij/pageguide/blob/c87f57a/src/PageGuideItem.ts#L45)*
+*Defined in [PageGuideItem.ts:56](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L56)*
 
 Index of the item in the collection
 
@@ -149,9 +159,22 @@ ___
 
 *Implementation of [IPageGuideItem](../interfaces/ipageguideitem.md).[position](../interfaces/ipageguideitem.md#position)*
 
-*Defined in [PageGuideItem.ts:49](https://github.com/Diligentia-Uitgeverij/pageguide/blob/c87f57a/src/PageGuideItem.ts#L49)*
+*Defined in [PageGuideItem.ts:60](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L60)*
 
-position, defaults to right
+position, defaults to bottom
+
+___
+<a id="shape"></a>
+
+###  shape
+
+**● shape**: *`string`*
+
+*Implementation of [IPageGuideItem](../interfaces/ipageguideitem.md).[shape](../interfaces/ipageguideitem.md#shape)*
+
+*Defined in [PageGuideItem.ts:61](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L61)*
+
+shape of the highlight, defaults to rect
 
 ___
 <a id="targets"></a>
@@ -160,7 +183,7 @@ ___
 
 **● targets**: *`NodeListOf`<`HTMLElement`>*
 
-*Defined in [PageGuideItem.ts:32](https://github.com/Diligentia-Uitgeverij/pageguide/blob/c87f57a/src/PageGuideItem.ts#L32)*
+*Defined in [PageGuideItem.ts:42](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L42)*
 
 *__description__*: NodeList of all found targets, can be undefined or empty.
 
@@ -177,9 +200,27 @@ ___
 
 *Implementation of [IPageGuideItem](../interfaces/ipageguideitem.md).[title](../interfaces/ipageguideitem.md#title)*
 
-*Defined in [PageGuideItem.ts:48](https://github.com/Diligentia-Uitgeverij/pageguide/blob/c87f57a/src/PageGuideItem.ts#L48)*
+*Defined in [PageGuideItem.ts:59](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L59)*
 
 title of the popup
+
+___
+<a id="bottom"></a>
+
+### `<Static>` BOTTOM
+
+**● BOTTOM**: *`string`* = "bottom"
+
+*Defined in [PageGuideItem.ts:27](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L27)*
+
+___
+<a id="circle"></a>
+
+### `<Static>` CIRCLE
+
+**● CIRCLE**: *`string`* = "circle"
+
+*Defined in [PageGuideItem.ts:22](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L22)*
 
 ___
 <a id="css_prefix"></a>
@@ -188,7 +229,7 @@ ___
 
 **● CSS_PREFIX**: *`string`* = "item"
 
-*Defined in [PageGuideItem.ts:18](https://github.com/Diligentia-Uitgeverij/pageguide/blob/c87f57a/src/PageGuideItem.ts#L18)*
+*Defined in [PageGuideItem.ts:18](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L18)*
 
 *__description__*: prefix used for the creation of CSS-classes
 
@@ -197,6 +238,60 @@ ___
 *__type__*: {string}
 
 *__memberof__*: PageGuideItem
+
+___
+<a id="ellipse"></a>
+
+### `<Static>` ELLIPSE
+
+**● ELLIPSE**: *`string`* = "ellipse"
+
+*Defined in [PageGuideItem.ts:23](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L23)*
+
+___
+<a id="left"></a>
+
+### `<Static>` LEFT
+
+**● LEFT**: *`string`* = "left"
+
+*Defined in [PageGuideItem.ts:28](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L28)*
+
+___
+<a id="rect"></a>
+
+### `<Static>` RECT
+
+**● RECT**: *`string`* = "rect"
+
+*Defined in [PageGuideItem.ts:20](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L20)*
+
+___
+<a id="right"></a>
+
+### `<Static>` RIGHT
+
+**● RIGHT**: *`string`* = "right"
+
+*Defined in [PageGuideItem.ts:26](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L26)*
+
+___
+<a id="rounded_rect"></a>
+
+### `<Static>` ROUNDED_RECT
+
+**● ROUNDED_RECT**: *`string`* = "rounded_rect"
+
+*Defined in [PageGuideItem.ts:21](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L21)*
+
+___
+<a id="top"></a>
+
+### `<Static>` TOP
+
+**● TOP**: *`string`* = "top"
+
+*Defined in [PageGuideItem.ts:25](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L25)*
 
 ___
 
@@ -208,7 +303,7 @@ ___
 
 ▸ **cleanup**(): `void`
 
-*Defined in [PageGuideItem.ts:85](https://github.com/Diligentia-Uitgeverij/pageguide/blob/c87f57a/src/PageGuideItem.ts#L85)*
+*Defined in [PageGuideItem.ts:97](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L97)*
 
 *__description__*: removes the PageGuideItem from the document.body
 
@@ -223,7 +318,7 @@ ___
 
 ▸ **draw**(cb: *`Function`*): `void`
 
-*Defined in [PageGuideItem.ts:64](https://github.com/Diligentia-Uitgeverij/pageguide/blob/c87f57a/src/PageGuideItem.ts#L64)*
+*Defined in [PageGuideItem.ts:76](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L76)*
 
 *__description__*: Draws the PageGuideItem on the document.body
 
@@ -244,7 +339,7 @@ ___
 
 ▸ **onExit**(callback: * `function` &#124; `null`*): `void`
 
-*Defined in [PageGuideItem.ts:101](https://github.com/Diligentia-Uitgeverij/pageguide/blob/c87f57a/src/PageGuideItem.ts#L101)*
+*Defined in [PageGuideItem.ts:113](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L113)*
 
 *__description__*: fires a callback when the user closes the PageGuideItem
 
@@ -265,7 +360,7 @@ ___
 
 ▸ **onNext**(callback: * `function` &#124; `null`*): `void`
 
-*Defined in [PageGuideItem.ts:118](https://github.com/Diligentia-Uitgeverij/pageguide/blob/c87f57a/src/PageGuideItem.ts#L118)*
+*Defined in [PageGuideItem.ts:130](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L130)*
 
 *__description__*: fires a callback when the user clicks the next button
 
@@ -286,7 +381,7 @@ ___
 
 ▸ **onPrevious**(callback: * `function` &#124; `null`*): `void`
 
-*Defined in [PageGuideItem.ts:110](https://github.com/Diligentia-Uitgeverij/pageguide/blob/c87f57a/src/PageGuideItem.ts#L110)*
+*Defined in [PageGuideItem.ts:122](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L122)*
 
 *__description__*: fires a callback when the user clicks the previous button
 
@@ -307,7 +402,7 @@ ___
 
 ▸ **update**(): `void`
 
-*Defined in [PageGuideItem.ts:92](https://github.com/Diligentia-Uitgeverij/pageguide/blob/c87f57a/src/PageGuideItem.ts#L92)*
+*Defined in [PageGuideItem.ts:104](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/PageGuideItem.ts#L104)*
 
 *__description__*: updates the GUI, repositions when needed
 

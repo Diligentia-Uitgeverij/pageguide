@@ -13,6 +13,7 @@ export const examplePage = `
         <section class="content-container">
             <header>
                 <h1>Diligentia Uitgeverij &mdash; PageGuide</h1>
+                <p class="hint">click here &rarr;</p>
                 <button id="btn-start-tour">i</button>
             </header>
             <section class="content">

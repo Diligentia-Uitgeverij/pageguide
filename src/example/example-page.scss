@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script|Ubuntu');
+
 @mixin ease-out($duration: 450ms, $property: all, $delay: 0ms){
   transition: $property $duration cubic-bezier(0.23, 1, 0.32, 1) $delay;
 }
@@ -19,7 +21,8 @@
 
 
 #example-page {
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-family: 'Ubuntu', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	line-height: 1.42em;
 	position: fixed;
 
 	top: 0;
@@ -91,12 +94,23 @@
 				margin: 0;
 				flex: 1;
 			}
+
+			p.hint {
+				font-family: 'Nanum Pen Script', cursive;
+				color: #ff9933;;
+				font-weight: 700;
+				font-size: 2em;
+				line-height: .5em;
+				padding-right: 5px;
+			}
+			
 			button {
 				display: block;
 				width: 24px;
 				height: 24px;
 				background-color: #E0E0E0;
 				border: 3px solid #666666;
+				color: #666666;
 				border-radius: 12px;
 				font-style: italic;
 				font-weight: 700;

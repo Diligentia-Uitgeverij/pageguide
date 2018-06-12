@@ -23,7 +23,8 @@
   ],
   "directories": {
     "doc": "./doc",
-    "lib": "./src"
+    "lib": "./src",
+    "example": "./src/example"
   },
   "author": "Peter Delvaux <peter.delvaux@diligentia-uitgeverij.be>",
   "dependencies": {
