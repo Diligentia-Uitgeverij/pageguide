@@ -27,13 +27,29 @@ export const exampleData: IPageGuideItem[] = [
 	{
 		title: `Single Element`,
 		content: `<p>This is how we highlight a single element by default. No shape or position has been defined.</p>`,
-		element: `header`,
+		element: `#target`,
+		position: `right`,
 	},
 	{
 		title: `Single Element, rounded rectangle`,
 		content: `<p>This is how we highlight the same element. Only this time we specified the hightlight shape to be a rounded rectangle.</p>`,
-		element: `header`,
+		element: `#target`,
+		position: `right`,
 		shape: 'rounded_rect',
+	},
+	{
+		title: `Single Element, circle`,
+		content: `<p>This is how we highlight the same element. Only this time we specified the hightlight shape to be a circle.</p>`,
+		element: `#target`,
+		position: `right`,
+		shape: 'circle',
+	},
+	{
+		title: `Single Element, ellipse`,
+		content: `<p>This is how we highlight the same element. Only this time we specified the hightlight shape to be a ellipse.</p>`,
+		element: `#target`,
+		position: `right`,
+		shape: 'ellipse',
 	},
 	{
 		title: `Single Element, positioned <code>right</code>`,

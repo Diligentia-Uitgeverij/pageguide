@@ -2,6 +2,7 @@ import { PageGuide } from '../PageGuide';
 import { IButtonDefinition } from '../interfaces/IButtonDefinition';
 import { ButtonGUI } from './ButtonGUI';
 import { PageGuideItem } from '../PageGuideItem';
+import { IRect } from '../interfaces/IRect';
 
 export class PageGuideGui {
     private canvas: HTMLCanvasElement;
@@ -71,7 +72,19 @@ export class PageGuideGui {
         }
         for (let i=0; i<this.target.targets.length; i++) {
             const element = this.target.targets.item(i);
-            const elementRect = element.getBoundingClientRect();
+            const tmpRect = element.getBoundingClientRect();
+            const elementRect: IRect = {
+                top: tmpRect.top - this.target.padding,
+                left: tmpRect.left - this.target.padding,
+                width: tmpRect.width + this.target.padding * 2,
+                height: tmpRect.height + this.target.padding * 2,
+            }
+            const maskingRect: IRect = {
+                top: elementRect.top,
+                left: elementRect.left,
+                width: elementRect.width,
+                height: elementRect.height,
+            }
             const radius = Math.max(elementRect.width, elementRect.height) / 2;
             const radiusX = elementRect.width / 2;
             const radiusY = elementRect.height / 2;
@@ -81,13 +94,17 @@ export class PageGuideGui {
             switch ( this.target.shape ) {
                 case PageGuideItem.CIRCLE:
                     this.ctx.arc(
-                        elementRect.left + radius,
-                        elementRect.top + radius, 
+                        elementRect.left + elementRect.width / 2,
+                        elementRect.top + elementRect.height / 2, 
                         radius, 
                         0, 
                         2 * Math.PI, 
                         false
                     );
+                    maskingRect.top = (elementRect.top + elementRect.height / 2) - radius;
+                    maskingRect.left = (elementRect.left + elementRect.width / 2) - radius;
+                    maskingRect.width = radius * 2;
+                    maskingRect.height = radius * 2;
                     break;
                 case PageGuideItem.ELLIPSE:
                     this.ctx.ellipse(
@@ -122,10 +139,10 @@ export class PageGuideGui {
             }
             this.ctx.clip();
             this.ctx.clearRect(
-                elementRect.left,
-                elementRect.top,
-                elementRect.width,
-                elementRect.height,
+                maskingRect.left,
+                maskingRect.top,
+                maskingRect.width,
+                maskingRect.height,
             );
             this.ctx.restore();
         }

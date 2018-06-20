@@ -50,6 +50,7 @@ export class PageGuideItem implements IPageGuideItem {
      * @param { string } title [OPTIONAL] title of the popup
      * @param { 'top'|'right'|'bottom'|'left' } position [OPTIONAL] position, defaults to bottom
      * @param { 'rect'|'rounded_rect'|'circle'|'ellipse' } shape [OPTIONAL] shape of the highlight, defaults to rect
+     * @param { number } padding [OPTIONAL] A padding around the element and the mask.
      */
     constructor(
         public content: string, 
@@ -59,6 +60,7 @@ export class PageGuideItem implements IPageGuideItem {
         public title: string = '', 
         public position: string = PageGuideItem.BOTTOM,
         public shape: string = PageGuideItem.RECT,
+        public padding: number = 0,
     ) {
         if (typeof this.element !== 'undefined' && this.element !== '') {
             this.targets = document.querySelectorAll(this.element);

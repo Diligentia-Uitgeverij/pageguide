@@ -33,7 +33,7 @@
 **● bottom**: * `number` &#124; `string`
 *
 
-*Defined in [interfaces/IButtonDefinition.ts:9](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/interfaces/IButtonDefinition.ts#L9)*
+*Defined in [interfaces/IButtonDefinition.ts:9](https://github.com/Diligentia-Uitgeverij/pageguide/blob/67b5b06/src/interfaces/IButtonDefinition.ts#L9)*
 
 ___
 <a id="content"></a>
@@ -42,7 +42,7 @@ ___
 
 **● content**: *`string`*
 
-*Defined in [interfaces/IButtonDefinition.ts:11](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/interfaces/IButtonDefinition.ts#L11)*
+*Defined in [interfaces/IButtonDefinition.ts:11](https://github.com/Diligentia-Uitgeverij/pageguide/blob/67b5b06/src/interfaces/IButtonDefinition.ts#L11)*
 
 ___
 <a id="left"></a>
@@ -52,7 +52,7 @@ ___
 **● left**: * `number` &#124; `string`
 *
 
-*Defined in [interfaces/IButtonDefinition.ts:10](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/interfaces/IButtonDefinition.ts#L10)*
+*Defined in [interfaces/IButtonDefinition.ts:10](https://github.com/Diligentia-Uitgeverij/pageguide/blob/67b5b06/src/interfaces/IButtonDefinition.ts#L10)*
 
 ___
 <a id="position"></a>
@@ -61,7 +61,7 @@ ___
 
 **● position**: *`string`*
 
-*Defined in [interfaces/IButtonDefinition.ts:6](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/interfaces/IButtonDefinition.ts#L6)*
+*Defined in [interfaces/IButtonDefinition.ts:6](https://github.com/Diligentia-Uitgeverij/pageguide/blob/67b5b06/src/interfaces/IButtonDefinition.ts#L6)*
 
 *__default__*: 'absolute'
 
@@ -75,7 +75,7 @@ ___
 **● right**: * `number` &#124; `string`
 *
 
-*Defined in [interfaces/IButtonDefinition.ts:8](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/interfaces/IButtonDefinition.ts#L8)*
+*Defined in [interfaces/IButtonDefinition.ts:8](https://github.com/Diligentia-Uitgeverij/pageguide/blob/67b5b06/src/interfaces/IButtonDefinition.ts#L8)*
 
 ___
 <a id="style"></a>
@@ -84,7 +84,7 @@ ___
 
 **● style**: *`object`*
 
-*Defined in [interfaces/IButtonDefinition.ts:12](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/interfaces/IButtonDefinition.ts#L12)*
+*Defined in [interfaces/IButtonDefinition.ts:12](https://github.com/Diligentia-Uitgeverij/pageguide/blob/67b5b06/src/interfaces/IButtonDefinition.ts#L12)*
 
 #### Type declaration
 
@@ -98,7 +98,7 @@ ___
 **● top**: * `number` &#124; `string`
 *
 
-*Defined in [interfaces/IButtonDefinition.ts:7](https://github.com/Diligentia-Uitgeverij/pageguide/blob/cfc0e20/src/interfaces/IButtonDefinition.ts#L7)*
+*Defined in [interfaces/IButtonDefinition.ts:7](https://github.com/Diligentia-Uitgeverij/pageguide/blob/67b5b06/src/interfaces/IButtonDefinition.ts#L7)*
 
 ___
 

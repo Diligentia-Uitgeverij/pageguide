@@ -19,7 +19,7 @@ export const examplePage = `
             <section class="content">
                 <h1>Content</h1>
                 <article id="article-1">
-                    <h2>Article 1</h2>
+                    <h2><span id="target">Article 1</span></h2>
                     <p>
                     <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt repellat provident dolorem vero rerum, dicta temporibus nesciunt officiis nulla harum sint exercitationem inventore reiciendis, voluptatum quos. Blanditiis dolorem nobis veritatis.</span>
                     <span>Tempore iusto, explicabo placeat sunt repellendus cum rem aspernatur optio veniam est voluptas ipsum. Unde ducimus dolorem, asperiores quo itaque provident, voluptas magnam, eaque tenetur aut ullam corrupti dolorum explicabo?</span>

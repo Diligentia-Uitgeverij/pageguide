@@ -15,6 +15,7 @@
 
 * [IButtonDefinition](interfaces/ibuttondefinition.md)
 * [IPageGuideItem](interfaces/ipageguideitem.md)
+* [IRect](interfaces/irect.md)
 
 ---
 

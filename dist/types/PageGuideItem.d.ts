@@ -7,6 +7,7 @@ export declare class PageGuideItem implements IPageGuideItem {
     title: string;
     position: string;
     shape: string;
+    padding: number;
     static readonly CSS_PREFIX: string;
     static readonly RECT: string;
     static readonly ROUNDED_RECT: string;
@@ -18,7 +19,7 @@ export declare class PageGuideItem implements IPageGuideItem {
     static readonly LEFT: string;
     private gui;
     targets: NodeListOf<HTMLElement>;
-    constructor(content: string, index: number, collectionLength: number, element?: string, title?: string, position?: string, shape?: string);
+    constructor(content: string, index: number, collectionLength: number, element?: string, title?: string, position?: string, shape?: string, padding?: number);
     draw(cb: Function): void;
     cleanup(): void;
     update(): void;

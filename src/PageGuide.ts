@@ -83,7 +83,7 @@ export class PageGuide {
         this.items = dtoItems
             .filter( dto => typeof dto.element === 'undefined' || document.querySelectorAll(dto.element).length > 0)
             .map( (dto, index, list) => {
-                const item = new PageGuideItem(dto.content, index, list.length, dto.element, dto.title, dto.position, dto.shape);
+                const item = new PageGuideItem(dto.content, index, list.length, dto.element, dto.title, dto.position, dto.shape, dto.padding);
 
                 item.onExit(()=>{ this.stop() });
                 item.onPrevious(()=>{ this.activeIndex --; this.step(); });
