@@ -36,6 +36,13 @@ export class PageGuide {
      */
     private items: PageGuideItem[];
     /**
+     * @description list of items to be displayed
+     * @private
+     * @type {PageGuideItem[]}
+     * @memberof PageGuide
+     */
+    private allItems: PageGuideItem[];
+    /**
      * @description if the PageGuide is active
      * @private
      * @type {boolean}
@@ -80,8 +87,7 @@ export class PageGuide {
     constructor(dtoItems: IPageGuideItem[], buttonDefinition: boolean|IButtonDefinition = true) {
         this.gui = new PageGuideGui( buttonDefinition );
 
-        this.items = dtoItems
-            .filter( dto => typeof dto.element === 'undefined' || document.querySelectorAll(dto.element).length > 0)
+        this.allItems = dtoItems
             .map( (dto, index, list) => {
                 const item = new PageGuideItem(dto.content, index, list.length, dto.element, dto.title, dto.position, dto.shape, dto.padding);
 
@@ -146,6 +152,12 @@ export class PageGuide {
      * @memberof PageGuide
      */
     public start(): void {
+        this.items = [];
+        this.items = this.allItems
+            .filter( 
+                dto => typeof dto.element === 'undefined' 
+                    || document.querySelectorAll(dto.element).length > 0
+            );
         this.isActive = true;
         this.gui.start();
 

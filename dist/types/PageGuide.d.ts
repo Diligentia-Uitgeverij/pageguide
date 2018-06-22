@@ -5,6 +5,7 @@ export declare class PageGuide {
     static readonly CSS_PREFIX: string;
     private gui;
     private items;
+    private allItems;
     private isActive;
     private activeIndex;
     private activeItem;
