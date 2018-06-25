@@ -41,7 +41,7 @@
 
 ⊕ **new PageGuideGui**(buttonDefinition?: * `boolean` &#124; [IButtonDefinition](../interfaces/ibuttondefinition.md)*): [PageGuideGui](pageguidegui.md)
 
-*Defined in [GUI/PageGuideGUI.ts:11](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/PageGuideGUI.ts#L11)*
+*Defined in [GUI/PageGuideGUI.ts:11](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/PageGuideGUI.ts#L11)*
 
 PageGuideGui
 *__description__*: adds a canvas as backdrop, from which the gui will clear shapes to show the underlying highlighted element.
@@ -64,7 +64,7 @@ ___
 
 **● btnStart**: *[ButtonGUI](buttongui.md)*
 
-*Defined in [GUI/PageGuideGUI.ts:10](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/PageGuideGUI.ts#L10)*
+*Defined in [GUI/PageGuideGUI.ts:10](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/PageGuideGUI.ts#L10)*
 
 ___
 <a id="buttondefinition"></a>
@@ -74,7 +74,7 @@ ___
 **● buttonDefinition**: * `boolean` &#124; [IButtonDefinition](../interfaces/ibuttondefinition.md)
 *
 
-*Defined in [GUI/PageGuideGUI.ts:18](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/PageGuideGUI.ts#L18)*
+*Defined in [GUI/PageGuideGUI.ts:18](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/PageGuideGUI.ts#L18)*
 
 ___
 <a id="canvas"></a>
@@ -83,7 +83,7 @@ ___
 
 **● canvas**: *`HTMLCanvasElement`*
 
-*Defined in [GUI/PageGuideGUI.ts:8](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/PageGuideGUI.ts#L8)*
+*Defined in [GUI/PageGuideGUI.ts:8](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/PageGuideGUI.ts#L8)*
 
 ___
 <a id="ctx"></a>
@@ -92,7 +92,7 @@ ___
 
 **● ctx**: *`CanvasRenderingContext2D`*
 
-*Defined in [GUI/PageGuideGUI.ts:9](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/PageGuideGUI.ts#L9)*
+*Defined in [GUI/PageGuideGUI.ts:9](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/PageGuideGUI.ts#L9)*
 
 ___
 <a id="target"></a>
@@ -101,7 +101,7 @@ ___
 
 **● target**: *[PageGuideItem](pageguideitem.md)*
 
-*Defined in [GUI/PageGuideGUI.ts:11](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/PageGuideGUI.ts#L11)*
+*Defined in [GUI/PageGuideGUI.ts:11](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/PageGuideGUI.ts#L11)*
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 ▸ **highlight**(target: *[PageGuideItem](pageguideitem.md)*): `void`
 
-*Defined in [GUI/PageGuideGUI.ts:191](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/PageGuideGUI.ts#L191)*
+*Defined in [GUI/PageGuideGUI.ts:189](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/PageGuideGUI.ts#L189)*
 
 **Parameters:**
 
@@ -130,7 +130,7 @@ ___
 
 ▸ **onEnd**(callback: *`function`*): `void`
 
-*Defined in [GUI/PageGuideGUI.ts:49](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/PageGuideGUI.ts#L49)*
+*Defined in [GUI/PageGuideGUI.ts:49](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/PageGuideGUI.ts#L49)*
 
 onEnd
 *__description__*: function that is called upon when clicking the canvas.
@@ -150,7 +150,7 @@ ___
 
 ▸ **onStart**(callback: *`function`*): `void`
 
-*Defined in [GUI/PageGuideGUI.ts:40](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/PageGuideGUI.ts#L40)*
+*Defined in [GUI/PageGuideGUI.ts:40](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/PageGuideGUI.ts#L40)*
 
 onStart
 *__description__*: function that is called upon when clicking the start button.
@@ -170,7 +170,7 @@ ___
 
 ▸ **renderBackdrop**(): `void`
 
-*Defined in [GUI/PageGuideGUI.ts:196](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/PageGuideGUI.ts#L196)*
+*Defined in [GUI/PageGuideGUI.ts:194](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/PageGuideGUI.ts#L194)*
 
 **Returns:** `void`
 
@@ -181,7 +181,7 @@ ___
 
 ▸ **roundRect**(ctx: *`any`*, x: *`any`*, y: *`any`*, width: *`any`*, height: *`any`*, radius: *`any`*, fill: *`any`*, stroke: *`any`*): `void`
 
-*Defined in [GUI/PageGuideGUI.ts:151](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/PageGuideGUI.ts#L151)*
+*Defined in [GUI/PageGuideGUI.ts:149](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/PageGuideGUI.ts#L149)*
 
 **Parameters:**
 
@@ -205,7 +205,7 @@ ___
 
 ▸ **start**(): `void`
 
-*Defined in [GUI/PageGuideGUI.ts:59](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/PageGuideGUI.ts#L59)*
+*Defined in [GUI/PageGuideGUI.ts:59](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/PageGuideGUI.ts#L59)*
 
 start
 *__description__*: Sizes the canvas and sizes it to fully cover either the window, either the contents.
@@ -221,7 +221,7 @@ ___
 
 ▸ **stop**(): `void`
 
-*Defined in [GUI/PageGuideGUI.ts:186](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/PageGuideGUI.ts#L186)*
+*Defined in [GUI/PageGuideGUI.ts:184](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/PageGuideGUI.ts#L184)*
 
 **Returns:** `void`
 
@@ -232,7 +232,7 @@ ___
 
 ▸ **update**(): `void`
 
-*Defined in [GUI/PageGuideGUI.ts:67](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/PageGuideGUI.ts#L67)*
+*Defined in [GUI/PageGuideGUI.ts:65](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/PageGuideGUI.ts#L65)*
 
 **Returns:** `void`
 

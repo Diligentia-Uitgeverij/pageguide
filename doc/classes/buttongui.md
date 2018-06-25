@@ -44,7 +44,7 @@
 
 ⊕ **new ButtonGUI**(dto?: *[IButtonDefinition](../interfaces/ibuttondefinition.md)*): [ButtonGUI](buttongui.md)
 
-*Defined in [GUI/ButtonGUI.ts:15](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/ButtonGUI.ts#L15)*
+*Defined in [GUI/ButtonGUI.ts:15](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/ButtonGUI.ts#L15)*
 
 **Parameters:**
 
@@ -67,7 +67,7 @@ ___
 
 *Implementation of [IButtonDefinition](../interfaces/ibuttondefinition.md).[bottom](../interfaces/ibuttondefinition.md#bottom)*
 
-*Defined in [GUI/ButtonGUI.ts:8](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/ButtonGUI.ts#L8)*
+*Defined in [GUI/ButtonGUI.ts:8](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/ButtonGUI.ts#L8)*
 
 ___
 <a id="content"></a>
@@ -78,7 +78,7 @@ ___
 
 *Implementation of [IButtonDefinition](../interfaces/ibuttondefinition.md).[content](../interfaces/ibuttondefinition.md#content)*
 
-*Defined in [GUI/ButtonGUI.ts:10](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/ButtonGUI.ts#L10)*
+*Defined in [GUI/ButtonGUI.ts:10](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/ButtonGUI.ts#L10)*
 
 ___
 <a id="left"></a>
@@ -90,7 +90,7 @@ ___
 
 *Implementation of [IButtonDefinition](../interfaces/ibuttondefinition.md).[left](../interfaces/ibuttondefinition.md#left)*
 
-*Defined in [GUI/ButtonGUI.ts:9](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/ButtonGUI.ts#L9)*
+*Defined in [GUI/ButtonGUI.ts:9](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/ButtonGUI.ts#L9)*
 
 ___
 <a id="markup"></a>
@@ -99,7 +99,7 @@ ___
 
 **● markup**: *`HTMLButtonElement`*
 
-*Defined in [GUI/ButtonGUI.ts:15](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/ButtonGUI.ts#L15)*
+*Defined in [GUI/ButtonGUI.ts:15](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/ButtonGUI.ts#L15)*
 
 ___
 <a id="position"></a>
@@ -110,7 +110,7 @@ ___
 
 *Implementation of [IButtonDefinition](../interfaces/ibuttondefinition.md).[position](../interfaces/ibuttondefinition.md#position)*
 
-*Defined in [GUI/ButtonGUI.ts:5](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/ButtonGUI.ts#L5)*
+*Defined in [GUI/ButtonGUI.ts:5](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/ButtonGUI.ts#L5)*
 
 ___
 <a id="right"></a>
@@ -122,7 +122,7 @@ ___
 
 *Implementation of [IButtonDefinition](../interfaces/ibuttondefinition.md).[right](../interfaces/ibuttondefinition.md#right)*
 
-*Defined in [GUI/ButtonGUI.ts:7](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/ButtonGUI.ts#L7)*
+*Defined in [GUI/ButtonGUI.ts:7](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/ButtonGUI.ts#L7)*
 
 ___
 <a id="top"></a>
@@ -134,7 +134,7 @@ ___
 
 *Implementation of [IButtonDefinition](../interfaces/ibuttondefinition.md).[top](../interfaces/ibuttondefinition.md#top)*
 
-*Defined in [GUI/ButtonGUI.ts:6](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/ButtonGUI.ts#L6)*
+*Defined in [GUI/ButtonGUI.ts:6](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/ButtonGUI.ts#L6)*
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 ▸ **toStyleString**(value: * `string` &#124; `number`*): `string`
 
-*Defined in [GUI/ButtonGUI.ts:40](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/ButtonGUI.ts#L40)*
+*Defined in [GUI/ButtonGUI.ts:40](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/ButtonGUI.ts#L40)*
 
 **Parameters:**
 
@@ -168,7 +168,7 @@ ___
 
 *Implementation of [IButtonDefinition](../interfaces/ibuttondefinition.md).[style](../interfaces/ibuttondefinition.md#style)*
 
-*Defined in [GUI/ButtonGUI.ts:11](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/ButtonGUI.ts#L11)*
+*Defined in [GUI/ButtonGUI.ts:11](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/ButtonGUI.ts#L11)*
 
 <a id="style.padding_right"></a>
 
@@ -176,7 +176,7 @@ ___
 
 **● padding-right**: *`string`* = "2px"
 
-*Defined in [GUI/ButtonGUI.ts:12](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/GUI/ButtonGUI.ts#L12)*
+*Defined in [GUI/ButtonGUI.ts:12](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/GUI/ButtonGUI.ts#L12)*
 
 ___
 

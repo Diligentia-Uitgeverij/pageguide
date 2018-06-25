@@ -34,8 +34,8 @@
 	background-color: #333333;
 	box-sizing: border-box;
 
-	*, 
-	*:before, 
+	*,
+	*:before,
 	*:after {
 		box-sizing: border-box;
 		padding: 0;
@@ -43,7 +43,7 @@
 	}
 	.container {
 		display: flex;
-		max-height: 100%; 
+		max-height: 100%;
 		background-color: #F0F0F0;
 		@extend .z-depth-3;
 	}
@@ -75,7 +75,7 @@
 		}
 	}
 	section.content-container {
-		
+
 		flex: 1;
 		overflow: auto;
 		max-height: 100%;
@@ -103,7 +103,7 @@
 				line-height: .5em;
 				padding-right: 5px;
 			}
-			
+
 			button {
 				display: block;
 				width: 24px;

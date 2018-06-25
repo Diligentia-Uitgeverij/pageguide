@@ -1,6 +1,6 @@
 {
   "name": "pageguide",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "A simple library to light page-elements up, even in complex z-index rich applications.",
   "license": "GPL-2.0",
   "main": "./dist/pageguide.js",

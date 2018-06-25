@@ -53,7 +53,7 @@
 
 ⊕ **new PageGuide**(dtoItems: *[IPageGuideItem](../interfaces/ipageguideitem.md)[]*, buttonDefinition?: * `boolean` &#124; [IButtonDefinition](../interfaces/ibuttondefinition.md)*): [PageGuide](pageguide.md)
 
-*Defined in [PageGuide.ts:80](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/PageGuide.ts#L80)*
+*Defined in [PageGuide.ts:80](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/PageGuide.ts#L80)*
 
 *__description__*: creates a new PageGuide
 
@@ -76,7 +76,7 @@ ___
 
 **● activeIndex**: *`number`* = 0
 
-*Defined in [PageGuide.ts:58](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/PageGuide.ts#L58)*
+*Defined in [PageGuide.ts:58](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/PageGuide.ts#L58)*
 
 *__description__*: Index of the item which is currently displayed
 
@@ -91,7 +91,7 @@ ___
 
 **● activeItem**: *[PageGuideItem](pageguideitem.md)*
 
-*Defined in [PageGuide.ts:65](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/PageGuide.ts#L65)*
+*Defined in [PageGuide.ts:65](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/PageGuide.ts#L65)*
 
 *__description__*: The currently active item
 
@@ -106,7 +106,7 @@ ___
 
 **● allItems**: *[PageGuideItem](pageguideitem.md)[]*
 
-*Defined in [PageGuide.ts:44](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/PageGuide.ts#L44)*
+*Defined in [PageGuide.ts:44](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/PageGuide.ts#L44)*
 
 *__description__*: list of items to be displayed
 
@@ -121,7 +121,7 @@ ___
 
 **● gui**: *[PageGuideGui](pageguidegui.md)*
 
-*Defined in [PageGuide.ts:30](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/PageGuide.ts#L30)*
+*Defined in [PageGuide.ts:30](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/PageGuide.ts#L30)*
 
 *__description__*: Graphical User Interface of the PageGuide
 
@@ -136,7 +136,7 @@ ___
 
 **● isActive**: *`boolean`* = false
 
-*Defined in [PageGuide.ts:51](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/PageGuide.ts#L51)*
+*Defined in [PageGuide.ts:51](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/PageGuide.ts#L51)*
 
 *__description__*: if the PageGuide is active
 
@@ -151,7 +151,7 @@ ___
 
 **● items**: *[PageGuideItem](pageguideitem.md)[]*
 
-*Defined in [PageGuide.ts:37](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/PageGuide.ts#L37)*
+*Defined in [PageGuide.ts:37](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/PageGuide.ts#L37)*
 
 *__description__*: list of items to be displayed
 
@@ -166,7 +166,7 @@ ___
 
 **● onEndCallback**: *`Function`*
 
-*Defined in [PageGuide.ts:80](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/PageGuide.ts#L80)*
+*Defined in [PageGuide.ts:80](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/PageGuide.ts#L80)*
 
 *__description__*: callBack functien to be called on stop
 
@@ -181,7 +181,7 @@ ___
 
 **● onStartCallback**: *`Function`*
 
-*Defined in [PageGuide.ts:73](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/PageGuide.ts#L73)*
+*Defined in [PageGuide.ts:73](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/PageGuide.ts#L73)*
 
 *__description__*: callBack functien to be called on start
 
@@ -196,7 +196,7 @@ ___
 
 **● CSS_PREFIX**: *`string`* = "page-guide"
 
-*Defined in [PageGuide.ts:22](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/PageGuide.ts#L22)*
+*Defined in [PageGuide.ts:22](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/PageGuide.ts#L22)*
 
 *__description__*: prefix used for the creation of CSS-classes
 
@@ -216,7 +216,7 @@ ___
 
 ▸ **cleanActiveItem**(): `void`
 
-*Defined in [PageGuide.ts:201](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/PageGuide.ts#L201)*
+*Defined in [PageGuide.ts:207](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/PageGuide.ts#L207)*
 
 cleanActiveItem
 *__description__*: If the active item is defiend, clean it up, and set it to undefined.
@@ -232,7 +232,7 @@ ___
 
 ▸ **onEnd**(cb: *`Function`*): `void`
 
-*Defined in [PageGuide.ts:241](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/PageGuide.ts#L241)*
+*Defined in [PageGuide.ts:247](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/PageGuide.ts#L247)*
 
 onEnd
 *__description__*: adds a callback function to fire when the pageGuide reaches the end, or is stopped by the user.
@@ -254,7 +254,7 @@ ___
 
 ▸ **onStart**(cb: *`Function`*): `void`
 
-*Defined in [PageGuide.ts:232](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/PageGuide.ts#L232)*
+*Defined in [PageGuide.ts:238](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/PageGuide.ts#L238)*
 
 onStart
 *__description__*: adds a callback function to fire when the pageGuide is started by the user.
@@ -276,7 +276,7 @@ ___
 
 ▸ **start**(): `void`
 
-*Defined in [PageGuide.ts:154](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/PageGuide.ts#L154)*
+*Defined in [PageGuide.ts:154](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/PageGuide.ts#L154)*
 
 start
 *__description__*: starts the PageGuide
@@ -292,7 +292,7 @@ ___
 
 ▸ **step**(index?: *`number`*): `void`
 
-*Defined in [PageGuide.ts:178](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/PageGuide.ts#L178)*
+*Defined in [PageGuide.ts:184](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/PageGuide.ts#L184)*
 
 step
 *__description__*: Renders the active step.
@@ -314,7 +314,7 @@ ___
 
 ▸ **stop**(): `void`
 
-*Defined in [PageGuide.ts:215](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/PageGuide.ts#L215)*
+*Defined in [PageGuide.ts:221](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/PageGuide.ts#L221)*
 
 stop
 *__description__*: stops the PageGuide

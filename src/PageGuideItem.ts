@@ -53,11 +53,11 @@ export class PageGuideItem implements IPageGuideItem {
      * @param { number } padding [OPTIONAL] A padding around the element and the mask.
      */
     constructor(
-        public content: string, 
+        public content: string,
         public index: number,
         public collectionLength: number,
-        public element?: string, 
-        public title: string = '', 
+        public element?: string,
+        public title: string = '',
         public position: string = PageGuideItem.BOTTOM,
         public shape: string = PageGuideItem.RECT,
         public padding: number = 0,
@@ -72,7 +72,7 @@ export class PageGuideItem implements IPageGuideItem {
     /**
      * @description Draws the PageGuideItem on the document.body
      * @param {Function} cb a callback function, so it will work on IE11 as well
-     * @returns {void} 
+     * @returns {void}
      * @memberof PageGuideItem
      */
     public draw(cb: Function): void {
@@ -109,7 +109,7 @@ export class PageGuideItem implements IPageGuideItem {
 
     /**
      * @description fires a callback when the user closes the PageGuideItem
-     * @param {(((this: HTMLElement, ev: MouseEvent) => any) | null)} callback 
+     * @param {(((this: HTMLElement, ev: MouseEvent) => any) | null)} callback
      * @memberof PageGuideItem
      */
     public onExit( callback: ((this: HTMLElement, ev: MouseEvent) => any) | null): void {
@@ -118,7 +118,7 @@ export class PageGuideItem implements IPageGuideItem {
 
     /**
      * @description fires a callback when the user clicks the previous button
-     * @param {(((this: HTMLElement, ev: MouseEvent) => any) | null)} callback 
+     * @param {(((this: HTMLElement, ev: MouseEvent) => any) | null)} callback
      * @memberof PageGuideItem
      */
     public onPrevious( callback: ((this: HTMLElement, ev: MouseEvent) => any) | null ): void {
@@ -126,7 +126,7 @@ export class PageGuideItem implements IPageGuideItem {
     }
     /**
      * @description fires a callback when the user clicks the next button
-     * @param {(((this: HTMLElement, ev: MouseEvent) => any) | null)} callback 
+     * @param {(((this: HTMLElement, ev: MouseEvent) => any) | null)} callback
      * @memberof PageGuideItem
      */
     public onNext( callback: ((this: HTMLElement, ev: MouseEvent) => any) | null ): void {

@@ -24,7 +24,7 @@ export class ButtonGUI implements IButtonDefinition {
 		if (typeof dto !== 'undefined') {
 			Object.keys(dto).forEach(key => this[key] = dto[key]);
 		}
-		
+
 		this.markup = document.createElement('button');
 		this.markup.innerHTML = this.content;
 		this.markup.classList.add( `${PageGuide.CSS_PREFIX}-button-start` );

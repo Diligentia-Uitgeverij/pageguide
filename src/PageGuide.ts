@@ -101,7 +101,7 @@ export class PageGuide {
         if ( buttonDefinition !== false ) {
             this.gui.onStart(() => this.start());
         }
-        
+
         this.gui.onEnd(() => this.stop());
 
         window.onkeydown = (evt) => {
@@ -113,7 +113,7 @@ export class PageGuide {
                 case 'Up':
                 case 'ArrowLeft':
                 case 'Left':
-                    this.activeIndex --; 
+                    this.activeIndex --;
                     this.step();
                     evt.preventDefault();
                     break;
@@ -122,7 +122,7 @@ export class PageGuide {
                 case 'ArrowRight':
                 case 'Right':
                 case 'Enter':
-                    this.activeIndex ++; 
+                    this.activeIndex ++;
                     this.step();
                     evt.preventDefault();
                     break;
@@ -154,10 +154,16 @@ export class PageGuide {
     public start(): void {
         this.items = [];
         this.items = this.allItems
-            .filter( 
-                dto => typeof dto.element === 'undefined' 
-                    || document.querySelectorAll(dto.element).length > 0
-            );
+            .map( (item: PageGuideItem) => {
+                if (typeof item.element !== 'undefined') {
+                    item.targets = document.querySelectorAll(item.element);
+                }
+
+                return item;
+            })
+            .filter( (item: PageGuideItem) => {
+                return typeof item.element === 'undefined' || item.targets.length > 0;
+            });
         this.isActive = true;
         this.gui.start();
 
@@ -172,7 +178,7 @@ export class PageGuide {
      * step
      * @description Renders the active step.
      * @param { number } index [OPTIONAL] the step you want to activate
-     * @returns {void} 
+     * @returns {void}
      * @memberof PageGuide
      */
     public step(index?: number): void {
@@ -185,9 +191,9 @@ export class PageGuide {
         if (this.activeIndex < 0 || this.activeIndex >= this.items.length) {
             return this.stop();
         }
-        
+
         this.activeItem = this.items[this.activeIndex];
-        
+
         this.activeItem.draw(() => {
             this.gui.highlight( this.activeItem );
         });
@@ -202,7 +208,7 @@ export class PageGuide {
         if (typeof this.activeItem === 'undefined') {
             return
         }
-        
+
         this.activeItem.cleanup();
         this.activeItem = undefined;
     }
@@ -226,7 +232,7 @@ export class PageGuide {
     /**
      * onStart
      * @description adds a callback function to fire when the pageGuide is started by the user.
-     * @param {Function} cb 
+     * @param {Function} cb
      * @memberof PageGuide
      */
     public onStart(cb: Function) {
@@ -235,7 +241,7 @@ export class PageGuide {
     /**
      * onEnd
      * @description adds a callback function to fire when the pageGuide reaches the end, or is stopped by the user.
-     * @param {Function} cb 
+     * @param {Function} cb
      * @memberof PageGuide
      */
     public onEnd(cb: Function) {

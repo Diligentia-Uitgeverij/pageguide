@@ -97,7 +97,7 @@ export class PageGuideItemGUI {
             const targetBox = target.getBoundingClientRect();
 
             this.popper = new Popper(target, this.markup, {
-                placement: position as Placement,                
+                placement: position as Placement,
                 modifiers: {
                     preventOverflow: {
                         boundariesElement: 'viewport',

@@ -25,7 +25,7 @@
 
 **● height**: *`number`*
 
-*Defined in [interfaces/IRect.ts:5](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/interfaces/IRect.ts#L5)*
+*Defined in [interfaces/IRect.ts:5](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/interfaces/IRect.ts#L5)*
 
 ___
 <a id="left"></a>
@@ -34,7 +34,7 @@ ___
 
 **● left**: *`number`*
 
-*Defined in [interfaces/IRect.ts:2](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/interfaces/IRect.ts#L2)*
+*Defined in [interfaces/IRect.ts:2](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/interfaces/IRect.ts#L2)*
 
 ___
 <a id="top"></a>
@@ -43,7 +43,7 @@ ___
 
 **● top**: *`number`*
 
-*Defined in [interfaces/IRect.ts:3](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/interfaces/IRect.ts#L3)*
+*Defined in [interfaces/IRect.ts:3](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/interfaces/IRect.ts#L3)*
 
 ___
 <a id="width"></a>
@@ -52,7 +52,7 @@ ___
 
 **● width**: *`number`*
 
-*Defined in [interfaces/IRect.ts:4](https://github.com/Diligentia-Uitgeverij/pageguide/blob/5197645/src/interfaces/IRect.ts#L4)*
+*Defined in [interfaces/IRect.ts:4](https://github.com/Diligentia-Uitgeverij/pageguide/blob/7a12dd3/src/interfaces/IRect.ts#L4)*
 
 ___
 

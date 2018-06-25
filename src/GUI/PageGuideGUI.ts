@@ -13,14 +13,14 @@ export class PageGuideGui {
     /**
      * PageGuideGui
      * @description adds a canvas as backdrop, from which the gui will clear shapes to show the underlying highlighted element.
-     * @param { boolean } hasButton 
+     * @param { boolean } hasButton
      */
     constructor(private buttonDefinition: boolean|IButtonDefinition = true) {
         this.canvas = document.createElement('canvas');
         this.canvas.className = `${PageGuide.CSS_PREFIX}-backdrop`;
         this.ctx = this.canvas.getContext('2d');
         document.body.appendChild(this.canvas);
-        
+
         if ( ! this.buttonDefinition ) {
             return;
         } else if ( this.buttonDefinition === true ) {
@@ -35,7 +35,7 @@ export class PageGuideGui {
     /**
      * onStart
      * @description function that is called upon when clicking the start button.
-     * @param { (this: HTMLElement, ev: MouseEvent): any } callback 
+     * @param { (this: HTMLElement, ev: MouseEvent): any } callback
      */
     public onStart(callback: (this: HTMLElement, ev: MouseEvent) => any ): void {
         this.btnStart.markup.onclick = callback;
@@ -44,7 +44,7 @@ export class PageGuideGui {
     /**
      * onEnd
      * @description function that is called upon when clicking the canvas.
-     * @param { (this: HTMLElement, ev: MouseEvent): any } callback 
+     * @param { (this: HTMLElement, ev: MouseEvent): any } callback
      */
     public onEnd(callback: (this: HTMLElement, ev: MouseEvent) => any ): void {
         this.canvas.onclick = callback;
@@ -53,12 +53,10 @@ export class PageGuideGui {
     /**
      * start
      * @description Sizes the canvas and sizes it to fully cover either the window, either the contents.
-     * @returns { void } 
+     * @returns { void }
      * @memberof PageGuideGui
      */
     public start(): void {
-        this.target = undefined;
-        
         this.update();
         this.canvas.style.display = 'block';
         this.canvas.classList.add('active');
@@ -88,17 +86,17 @@ export class PageGuideGui {
             const radius = Math.max(elementRect.width, elementRect.height) / 2;
             const radiusX = elementRect.width / 2;
             const radiusY = elementRect.height / 2;
-            
+
             this.ctx.save();
             this.ctx.beginPath();
             switch ( this.target.shape ) {
                 case PageGuideItem.CIRCLE:
                     this.ctx.arc(
                         elementRect.left + elementRect.width / 2,
-                        elementRect.top + elementRect.height / 2, 
-                        radius, 
-                        0, 
-                        2 * Math.PI, 
+                        elementRect.top + elementRect.height / 2,
+                        radius,
+                        0,
+                        2 * Math.PI,
                         false
                     );
                     maskingRect.top = (elementRect.top + elementRect.height / 2) - radius;
@@ -113,13 +111,13 @@ export class PageGuideGui {
                         radiusX,
                         radiusY,
                         0,
-                        0, 
+                        0,
                         2 * Math.PI,
                     );
                     break;
                 case PageGuideItem.ROUNDED_RECT:
                     this.roundRect(
-                        this.ctx, 
+                        this.ctx,
                         elementRect.left,
                         elementRect.top,
                         elementRect.width,
@@ -180,7 +178,7 @@ export class PageGuideGui {
         if (stroke) {
             ctx.stroke();
         }
-      
+
     }
 
     public stop(): void {
@@ -201,11 +199,11 @@ export class PageGuideGui {
         this.canvas.setAttribute('height', `${stageHeight}px`);
 
         const gradient = this.ctx.createRadialGradient(
-            stageWidth/2, 
-            stageHeight/2, 
-            0, 
-            stageWidth / 2, 
-            stageHeight/2, 
+            stageWidth/2,
+            stageHeight/2,
+            0,
+            stageWidth / 2,
+            stageHeight/2,
             Math.max(stageWidth, stageHeight)
         );
         gradient.addColorStop(0, 'rgba(0,0,0,0.5)');

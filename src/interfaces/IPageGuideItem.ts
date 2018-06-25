@@ -1,6 +1,6 @@
 export interface IPageGuideItem {
 	content: string;
-	element?: string; 
+	element?: string;
 	title?: string;
 	position?: string;
 	shape?: string;

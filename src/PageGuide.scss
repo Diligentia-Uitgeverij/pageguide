@@ -83,7 +83,7 @@ $spacing-extra-large: $spacing-default * 4;
 	}
 	&[x-placement^="bottom"] {
 		border-top: $spacing-small solid $color-highlight;
-		
+
 		.page-guide-item-arrow {
 			border-bottom-color: $color-highlight;
 			top: -$spacing-small * 3;
@@ -94,7 +94,7 @@ $spacing-extra-large: $spacing-default * 4;
 	}
 	&[x-placement^="top"] {
 		border-bottom: $spacing-small solid $color-highlight;
-		
+
 		.page-guide-item-arrow {
 			border-top-color: $color-highlight;
 			top: initial;
@@ -105,7 +105,7 @@ $spacing-extra-large: $spacing-default * 4;
 	}
 	&[x-placement^="right"] {
 		border-left: $spacing-small solid $color-highlight;
-		
+
 		.page-guide-item-arrow {
 			border-right-color: $color-highlight;
 			left: -$spacing-small * 3;
@@ -116,7 +116,7 @@ $spacing-extra-large: $spacing-default * 4;
 	}
 	&[x-placement^="left"] {
 		border-right: $spacing-small solid $color-highlight;
-		
+
 		.page-guide-item-arrow {
 			border-left-color: $color-highlight;
 			left: initial;

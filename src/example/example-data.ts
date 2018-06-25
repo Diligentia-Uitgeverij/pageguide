@@ -9,13 +9,13 @@ export const exampleData: IPageGuideItem[] = [
 		title: `Diligentia Uitgeverij &mdash; PageGuide`,
 		content: `
 		<p>Our applications usualy consist of nested containers, some are positioned absolute others fixed or relative.</p>
-		<p>Most of the introduction libraries I've found were based on Z-index. This works great, if you're not writing an 
+		<p>Most of the introduction libraries I've found were based on Z-index. This works great, if you're not writing an
 		app where you already use z-indexes on containers and their children.<br>
 		In other words, none of them worked for our specific case.</p>`,
 	},
 	{
 		title: `Diligentia Uitgeverij &mdash; PageGuide`,
-		content: `<p>So, how does our guide work? Well, we don't rely on z-indexes, but our overlay is a canvas. We simply 
+		content: `<p>So, how does our guide work? Well, we don't rely on z-indexes, but our overlay is a canvas. We simply
 		cut out a shape to show the highlighted element.<br>
 		Our pop-over with all the content is then placed on top of all this.</p>`,
 	},
